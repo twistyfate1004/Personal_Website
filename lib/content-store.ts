@@ -38,14 +38,16 @@ export const adminResources: AdminResource[] = [
 const dataDirectory = path.join(process.cwd(), "data");
 const storageDirectory = path.join(process.cwd(), "storage");
 const railwayVolumePath = process.env.RAILWAY_VOLUME_MOUNT_PATH;
-const databasePath =
+const configuredDatabasePath =
   process.env.DATABASE_PATH ||
   (railwayVolumePath
     ? path.join(railwayVolumePath, "site-content.db")
     : path.join(storageDirectory, "site-content.db"));
+const fallbackDatabasePath = path.join(storageDirectory, "site-content.db");
 
 let database: Database.Database | null = null;
 let initialized = false;
+let activeDatabasePath: string | null = null;
 
 export function isLocalizedResource(resource: AdminResource) {
   return localizedResources.has(resource);
@@ -62,9 +64,11 @@ function getSeedFilePath(resource: AdminResource, language: AdminLanguage) {
 
 function getDatabase() {
   if (!database) {
-    fs.mkdirSync(path.dirname(databasePath), { recursive: true });
-    database = new Database(databasePath);
+    const resolvedPath = resolveDatabasePath();
+    fs.mkdirSync(path.dirname(resolvedPath), { recursive: true });
+    database = new Database(resolvedPath);
     database.pragma("journal_mode = WAL");
+    activeDatabasePath = resolvedPath;
   }
 
   if (!initialized) {
@@ -73,6 +77,16 @@ function getDatabase() {
   }
 
   return database;
+}
+
+function resolveDatabasePath() {
+  try {
+    fs.mkdirSync(path.dirname(configuredDatabasePath), { recursive: true });
+    return configuredDatabasePath;
+  } catch {
+    fs.mkdirSync(path.dirname(fallbackDatabasePath), { recursive: true });
+    return fallbackDatabasePath;
+  }
 }
 
 function initializeDatabase(db: Database.Database) {
@@ -176,5 +190,5 @@ export function writeStoredData(
 }
 
 export function getDatabasePath() {
-  return databasePath;
+  return activeDatabasePath ?? configuredDatabasePath;
 }
