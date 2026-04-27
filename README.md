@@ -71,6 +71,34 @@ disk storage. SQLite is a good fit for a single-node deployment or VPS. If you
 later move to a serverless platform, the data layer should be switched to an
 external database.
 
+### Recommended free deployment: Railway
+
+This project is configured to work on Railway Free because Railway supports
+persistent volumes for small projects. On Railway:
+
+1. Create a new project from the GitHub repository.
+2. Add environment variables:
+
+```bash
+ADMIN_PASSWORD=your-admin-password
+ADMIN_SECRET=a-long-random-secret
+```
+
+3. Create and attach a Volume to the service.
+4. Set the Volume mount path to `/data`.
+5. Deploy the app.
+
+At runtime, the app automatically uses `RAILWAY_VOLUME_MOUNT_PATH` when
+available, so the SQLite database will be stored on the mounted volume.
+
+Important limits:
+
+- Railway Free currently includes a small monthly usage credit and a 0.5 GB
+  volume, so this is best for a personal site with light traffic.
+- Render Free is not a good fit for this project because its free web services
+  use ephemeral local storage, which would not preserve SQLite data between
+  restarts and redeploys.
+
 ### Build for Production
 
 ```bash

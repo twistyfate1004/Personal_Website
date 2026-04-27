@@ -37,7 +37,12 @@ export const adminResources: AdminResource[] = [
 
 const dataDirectory = path.join(process.cwd(), "data");
 const storageDirectory = path.join(process.cwd(), "storage");
-const databasePath = process.env.DATABASE_PATH || path.join(storageDirectory, "site-content.db");
+const railwayVolumePath = process.env.RAILWAY_VOLUME_MOUNT_PATH;
+const databasePath =
+  process.env.DATABASE_PATH ||
+  (railwayVolumePath
+    ? path.join(railwayVolumePath, "site-content.db")
+    : path.join(storageDirectory, "site-content.db"));
 
 let database: Database.Database | null = null;
 let initialized = false;
