@@ -62,7 +62,7 @@ function getSeedFilePath(resource: AdminResource, language: AdminLanguage) {
 
 function getDatabase() {
   if (!database) {
-    fs.mkdirSync(storageDirectory, { recursive: true });
+    fs.mkdirSync(path.dirname(databasePath), { recursive: true });
     database = new Database(databasePath);
     database.pragma("journal_mode = WAL");
   }
