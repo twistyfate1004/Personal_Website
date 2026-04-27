@@ -1,0 +1,84 @@
+---
+title: "Why I Chose Next.js for My Personal Site"
+date: "2024-12-26"
+summary: "A look at my technology stack and why Next.js is perfect for personal websites."
+---
+
+# Why Next.js?
+
+When I decided to rebuild my personal website, I considered several options. Here's why I chose Next.js and what makes it great for this use case.
+
+## The Requirements
+
+For a personal website, I needed something that:
+
+1. **Fast**: Pages should load instantly
+2. **SEO-friendly**: Search engines should easily find my content
+3. **Easy to deploy**: I want to update content without hassle
+4. **Maintainable**: I should be able to update it years from now
+
+## Why Next.js Stands Out
+
+### Server-Side Rendering (SSR)
+
+Next.js supports SSR out of the box. This means:
+
+- Better SEO: Search engines get fully rendered HTML
+- Faster initial load: Users see content sooner
+- Social sharing: Links preview nicely on Twitter, LinkedIn, etc.
+
+### Static Site Generation (SSG)
+
+For content that doesn't change often (like blog posts), Next.js can generate static HTML at build time. This gives you:
+
+- Best possible performance
+- CDN-friendly static files
+- No server needed
+
+### File-Based Routing
+
+Creating pages is as simple as adding files to the `app` directory:
+
+```
+app/
+  about/
+    page.tsx    -> /about
+  writing/
+    [slug]/
+      page.tsx  -> /writing/:slug
+```
+
+No complex router configuration needed.
+
+### Built-in Optimization
+
+Next.js handles:
+
+- Image optimization (automatic resizing, lazy loading)
+- Font optimization (automatic Google Fonts optimization)
+- Code splitting (only load what you need)
+
+## The Trade-offs
+
+Nothing is perfect. Here are some considerations:
+
+**Pros:**
+- Excellent performance
+- Great developer experience
+- Large community and ecosystem
+- Vercel deployment is seamless
+
+**Cons:**
+- Framework lock-in (but React skills transfer)
+- Learning curve if you're new to React
+- Opinionated (which is also a pro)
+
+## Conclusion
+
+For a personal website where content and performance matter, Next.js hits the sweet spot. It gives you the flexibility of React with the performance of static sites.
+
+If you're building a personal site or blog, I'd definitely recommend giving it a try.
+
+---
+
+**Update**: After running this site in production for a few months, I'm even happier with this choice. The Vercel integration makes deployment completely painless, and the performance has been excellent.

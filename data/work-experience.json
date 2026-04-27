@@ -1,0 +1,48 @@
+[
+  {
+    "id": "work-1",
+    "company": "Zhipu.ai",
+    "position": "MaaS",
+    "startDate": "2025.12",
+    "endDate": "Present",
+    "current": true,
+    "location": "Beijing",
+    "description": [
+      "Developed and maintained web applications using React and Node.js",
+      "Collaborated with cross-functional teams to deliver high-quality software solutions",
+      "Participated in code reviews and implemented best practices",
+      "Optimized application performance, reducing load time by 30%"
+    ]
+  },
+  {
+    "id": "work-2",
+    "company": "MiraclePlus",
+    "position": "Product Manager",
+    "startDate": "2025.01",
+    "endDate": "2025.05",
+    "current": false,
+    "location": "Beijing",
+    "description": [
+      "Developed and maintained web applications using React and Node.js",
+      "Collaborated with cross-functional teams to deliver high-quality software solutions",
+      "Participated in code reviews and implemented best practices",
+      "Optimized application performance, reducing load time by 30%"
+    ]
+  },
+  {
+    "id": "work-3",
+    "company": "China Merchants Bank",
+    "position": "Fintech Intern",
+    "startDate": "2024-06",
+    "endDate": "2024-09",
+    "current": false,
+    "location": "Hangzhou",
+    "description": [
+      "Built responsive user interfaces using Vue.js and Tailwind CSS",
+      "Worked closely with designers to implement pixel-perfect designs",
+      "Assisted in debugging and fixing production issues",
+      "Contributed to the development of internal tools and dashboards"
+    ],
+    "skills": ["Vue.js", "JavaScript", "CSS", "Git"]
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "name": "Boyuan Jiang",
+  "motto": "When the seagulls follow the trawler, it's because they think sardines will be thrown into the sea.",
+  "avatar": "/avatar.jpg",
+  "personalInfo": {
+    "email": "13801107067@163.com",
+    "phone": "+86 13801107067",
+    "mbti": "INFJ",
+    "zodiac": "Libra",
+    "age": 23,
+    "hometown": "Beijing / Chengdu",
+    "baseLocation": "Beijing / Fukuoka"
+  },
+  "selfDescription": "A passionate computer science student with a love for building innovative solutions. Always eager to learn new technologies and tackle challenging problems.",
+
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/username",
+      "icon": "github"
+    },
+    {
+      "name": "RedNote",
+      "url": "https://xhslink.com/m/8rWSeaBN2OQ",
+      "icon": "小红书"
+    },
+    {
+      "name": "Tiktok",
+      "url": "https://v.douyin.com/Kko_NKeuxhw/ 9@2.com :0pm",
+      "icon": "Tiktok"
+    }
+  ]
+}

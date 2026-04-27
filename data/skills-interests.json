@@ -1,0 +1,23 @@
+{
+  "skills": [
+    {
+      "category": "Programming",
+      "items": ["Python", "C++", "SQL"]
+    },
+    {
+      "category": "Product",
+      "items": ["Figma", "Axure"]
+    },
+    {
+      "category": "王者荣耀",
+      "items": ["干将莫邪", "女娲", "曹操", "少司缘", "空空儿"]
+    }
+  ],
+  "interests": [
+    "Swimming",
+    "Photography",
+    "Reading",
+    "Hiking",
+    "Coffee"
+  ]
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "edu-1",
+    "institution": "Waseda University",
+    "degree": "Master of Science",
+    "major": "Computer Science",
+    "startDate": "2023-09",
+    "endDate": null,
+    "current": true,
+    "location": "Tokyo, Japan",
+    "gpa": "3.8/4.0",
+    "coursework": [
+      "Advanced Algorithms",
+      "Machine Learning",
+      "Distributed Systems",
+      "Computer Vision"
+    ],
+    "achievements": [
+      "Received Academic Excellence Scholarship",
+      "Published research paper on AI/ML"
+    ]
+  },
+  {
+    "id": "edu-2",
+    "institution": "Beijing University",
+    "degree": "Bachelor of Science",
+    "major": "Software Engineering",
+    "startDate": "2019-09",
+    "endDate": "2023-06",
+    "current": false,
+    "location": "Beijing, China",
+    "gpa": "3.9/4.0",
+    "coursework": [
+      "Data Structures and Algorithms",
+      "Database Systems",
+      "Software Engineering",
+      "Operating Systems"
+    ],
+    "achievements": [
+      "Graduated with First Class Honors",
+      "President of Programming Club",
+      "Won National Programming Competition"
+    ]
+  }
+]

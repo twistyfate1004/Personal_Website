@@ -1,0 +1,96 @@
+[
+  {
+    "id": "edu-1",
+    "institution": "早稻田大学",
+    "degree": "工学硕士（研究型）",
+    "major": "计算机科学与技术",
+    "startDate": "2025.09",
+    "endDate": null,
+    "current": true,
+    "location": "日本",
+    "gpa": "3.8/4.0",
+    "coursework": [
+      "计算智能",
+      "物联网与大数据",
+      "启发式算法",
+      "机器学习"
+    ],
+    "achievements": [
+      {"isHeading": true, "title": "奖学金"},
+      "Waseda University Partial Tuition-Waiver Scholarship for Privately Financed International Students",
+      {"isHeading": true, "title": "研究方向"},
+      "多模态大模型的应用"
+    ]
+  },
+  {
+    "id": "edu-2",
+    "institution": "四川大学",
+    "degree": "双学士",
+    "major": "计算机科学与技术 + 金融工程",
+    "startDate": "2019-09",
+    "endDate": "2025-06",
+    "current": false,
+    "location": "四川成都",
+    "gpa": "3.42/4.0",
+    "coursework": [
+      "数据结构与算法",
+      "数据库系统",
+      "现代软件工程",
+      "计量经济学",
+      "金融风险管理",
+      "会计学"
+    ],
+    "achievements": [
+      {"isHeading": true, "title": "奖学金"},
+      "四川大学2023-2024学年单向二等奖学金",
+      {"isHeading": true, "title": "四川大学足球协会    副会长"},
+      "宣传运营：负责社团公众号运营，发布比赛战报、活动通知、毕业季主题推送等文章，长期霸榜学校社团公众号阅读量第一名；拍摄“川大足协”宣传纪录片以及“新生杯”决赛集锦，B站观看量分别为1.3万与2.7万；制作各项活动宣传海报，共计12张。",
+      "公众号运营数据分析：基于公众号后台提供的数据，搭建社团公众号运营数据看板，赋能公众号内容创作，实现阅读量长期霸榜。",
+      {"isHeading": true, "title": "四川大学计算机学院足球队    队长"},
+      "负责球队日常训练组织、战术安排及比赛统筹工作。",
+      "本科四年中在“川大杯”11人制足球赛中，三年荣获冠军，一年荣获亚军。",
+      {"isHeading": true, "title": "计算金融交叉实验班    组织委员"},
+      "负责组织班级团日活动。"
+    ]
+  },
+  {
+    "id": "edu-3",
+    "institution": "北京市中关村中学",
+    "degree": "高中",
+    "startDate": "2018-09",
+    "endDate": "2021-06",
+    "current": false,
+    "location": "北京海淀",
+    "achievements": [
+      {"isHeading": true, "title": "模拟联合国社团 社长"},
+      "统筹社团所有的活动",
+      "2020年汇文国籍模拟联合国大会杰出代表奖",
+      "北京校际模拟联合国大会2018秋季会议杰出代表奖"
+    ]
+  },
+  {
+    "id": "edu-4",
+    "institution": "北京市八一学校",
+    "degree": "初中",
+    "startDate": "2015-09",
+    "endDate": "2018-06",
+    "current": false,
+    "location": "北京海淀",
+    "achievements": [
+      {"isHeading": true, "title": "学生会外联部成员"},
+      "圣诞快递"
+    ]
+  },
+  {
+    "id": "edu-5",
+    "institution": "北京市万泉小学",
+    "degree": "小学",
+    "startDate": "2009-09",
+    "endDate": "2015-06",
+    "current": false,
+    "location": "北京海淀",
+    "achievements": [
+      {"isHeading": true, "title": "小孩哥一枚"}
+    ]
+  }
+]

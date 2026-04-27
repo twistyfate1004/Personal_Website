@@ -1,0 +1,50 @@
+[
+  {
+    "year": "2025.12 - 至今",
+    "title": "智谱华章",
+    "description": "MaaS 产品运营",
+    "type": "work"
+  },
+  {
+    "year": "2025.09 - 至今",
+    "title": "早稻田大学",
+    "description": "计算机科学硕士",
+    "type": "education"
+  },
+  {
+    "year": "2025.01 - 2025.05",
+    "title": "奇绩创坛（MiraclePlus）",
+    "description": "产品经理实习生",
+    "type": "work"
+  },
+  {
+    "year": "2021.09 - 2025.06",
+    "title": "四川大学",
+    "description": "计算机科学与技术 + 金融工程 双学士学位",
+    "type": "education"
+  },
+  {
+    "year": "2024.06 - 2024.09",
+    "title": "招商银行",
+    "description": "金融科技实习生",
+    "type": "work"
+  },
+  {
+    "year": "2019.09 - 2021.06",
+    "title": "北京中关村中学",
+    "description": "高中",
+    "type": "education"
+  },
+  {
+    "year": "2016.09 - 2019.06",
+    "title": "北京八一学校",
+    "description": "初中",
+    "type": "education"
+  },
+  {
+    "year": "2010.09 - 2016.06",
+    "title": "万泉小学",
+    "description": "小学",
+    "type": "education"
+  }
+]

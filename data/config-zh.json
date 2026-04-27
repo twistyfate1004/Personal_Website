@@ -1,0 +1,34 @@
+{
+  "name": "江博源",
+  "tagline": "学生，早稻田大学，智谱华章",
+  "bio": "你好！我是一名热爱产品和技术的学生，本科来自四川大学，是计算机与金融工程双学位。目前在早稻田大学攻读计算机科学硕士学位。我喜欢探索新技术，构建有趣的项目。",
+  "motto": "海鸥跟随渔船是因为他们相信沙丁鱼会被扔进大海",
+  "avatar": "/avatar.jpg",
+  "personalInfo": {
+    "email": "13801107067@163.com",
+    "phone": "+86 13801107067",
+    "mbti": "INFJ",
+    "zodiac": "天秤座",
+    "age": 23,
+    "hometown": "北京 / 成都",
+    "baseLocation": "北京 / 福冈"
+  },
+  "selfDescription": "一名对计算机科学充满热情的学生，热衷于构建创新的解决方案。始终渴望学习新技术并解决具有挑战性的问题。",
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/username",
+      "icon": "github"
+    },
+    {
+      "name": "小红书",
+      "url": "https://xhslink.com/m/8rWSeaBN2OQ",
+      "icon": "小红书"
+    },
+    {
+      "name": "抖音",
+      "url": "https://v.douyin.com/Kko_NKeuxhw/ 9@2.com :0pm",
+      "icon": "Tiktok"
+    }
+  ]
+}

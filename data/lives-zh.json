@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": "life-1",
+      "date": "2025-01-27",
+      "title": "飞友一枚✈️",
+      "content": "因为很喜欢站在高处看风景，因而喜欢上了飞行。虽然已经坐飞机坐到麻木，但其实每一次起降都非常激动。市面上的所有常见记性都已经打卡过了，所以目前就是不断扩充自己的航旅纵横地图。当然，757，767，340这种远古机型确实还没机会去体验。",
+      "mediaList": [
+        {
+          "url": "/cathy.jpeg",
+          "type": "image"
+        },
+        {
+          "url": "/cluo.jpeg",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "id": "life-2",
+      "date": "Every year",
+      "title": "户外运动爱好者",
+      "content": "爬山，攀岩，跳伞，潜水，开越野车，徒步，每样都很喜欢！其实就是特别享受那种在大自然的里的感觉，每年必须要有那么几趟这样的旅行！",
+      "mediaList": [
+        {
+          "url": "/kuke.jpeg",
+          "type": "image"
+        },
+        {
+          "url": "/beer.jpeg",
+          "type": "image"
+        },
+        {
+          "url": "/kapa.jpeg",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "id": "life-3",
+      "date": "Every week",
+      "title": "自闭游泳选手",
+      "content": "如果没特殊情况，每周会游泳两次，尤其喜欢英东游泳馆，3米深的池子游起来超级舒服！长距离选手，就是现在体重太大了，配速有点跟不上，但是耐力还是够的。",
+      "mediaList": [
+        {
+          "url": "/jump.jpeg",
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
