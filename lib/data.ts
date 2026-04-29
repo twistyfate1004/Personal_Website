@@ -1,4 +1,5 @@
-import { AdminLanguage, readStoredData } from "@/lib/content-store";
+import fs from "fs";
+import path from "path";
 
 // Define types for your data structures
 export interface SocialLink {
@@ -110,19 +111,45 @@ export interface Education {
   achievements?: RichTextItem[];
 }
 
-function normalizeLanguage(language: string) {
-  return (language === "zh" ? "zh" : "en") as AdminLanguage;
+type ContentLanguage = "en" | "zh";
+
+const dataDirectory = path.join(process.cwd(), "data");
+const localizedResources = new Set([
+  "config",
+  "projects",
+  "work-experience",
+  "education",
+  "timeline",
+  "skills-interests",
+  "lives",
+]);
+
+function normalizeLanguage(language: string): ContentLanguage {
+  return language === "zh" ? "zh" : "en";
+}
+
+function getDataFilename(resource: string, language: ContentLanguage) {
+  const suffix = localizedResources.has(resource) && language === "zh" ? "-zh" : "";
+  return `${resource}${suffix}.json`;
+}
+
+function readDataFile<T>(resource: string, language: string = "en"): T {
+  const filename = getDataFilename(resource, normalizeLanguage(language));
+  const filePath = path.join(dataDirectory, filename);
+  const contents = fs.readFileSync(filePath, "utf8");
+
+  return JSON.parse(contents) as T;
 }
 
 export function getConfig(language: string = "en"): SiteConfig {
-  return readStoredData("config", normalizeLanguage(language)) as SiteConfig;
+  return readDataFile<SiteConfig>("config", language);
 }
 
 /**
  * Get all projects
  */
 export function getProjects(language: string = "en"): Project[] {
-  return readStoredData("projects", normalizeLanguage(language)) as Project[];
+  return readDataFile<Project[]>("projects", language);
 }
 
 /**
@@ -143,46 +170,40 @@ export function getProjectById(id: string, language: string = "en"): Project | u
  * Get timeline
  */
 export function getTimeline(language: string = "en"): TimelineItem[] {
-  return readStoredData("timeline", normalizeLanguage(language)) as TimelineItem[];
+  return readDataFile<TimelineItem[]>("timeline", language);
 }
 
 /**
  * Get current status
  */
 export function getStatus(): Status {
-  return readStoredData("status", "en") as Status;
+  return readDataFile<Status>("status");
 }
 
 /**
  * Get skills and interests
  */
 export function getSkillsAndInterests(language: string = "en"): SkillsAndInterests {
-  return readStoredData(
-    "skills-interests",
-    normalizeLanguage(language)
-  ) as SkillsAndInterests;
+  return readDataFile<SkillsAndInterests>("skills-interests", language);
 }
 
 /**
  * Get lives data
  */
 export function getLives(language: string = "en"): LivesData {
-  return readStoredData("lives", normalizeLanguage(language)) as LivesData;
+  return readDataFile<LivesData>("lives", language);
 }
 
 /**
  * Get work experiences
  */
 export function getWorkExperiences(language: string = "en"): WorkExperience[] {
-  return readStoredData(
-    "work-experience",
-    normalizeLanguage(language)
-  ) as WorkExperience[];
+  return readDataFile<WorkExperience[]>("work-experience", language);
 }
 
 /**
  * Get education background
  */
 export function getEducation(language: string = "en"): Education[] {
-  return readStoredData("education", normalizeLanguage(language)) as Education[];
+  return readDataFile<Education[]>("education", language);
 }

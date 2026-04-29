@@ -1,36 +1,27 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Container } from "@/components/layout/Container";
 import { MapPin, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { RichTextItem, WorkExperience } from "@/lib/data";
+import { WorkExperience } from "@/lib/data";
+import { useDataResource } from "@/hooks/useDataResource";
+import { RichTextList } from "@/components/ui/RichTextList";
 
 export default function WorkExperiencePage() {
   const { language, t } = useLanguage();
-  const [experiences, setExperiences] = useState<WorkExperience[]>([]);
-
-  useEffect(() => {
-    async function fetchWorkExperiences() {
-      try {
-        const res = await fetch(`/api/data/work-experience?lang=${language}`);
-        const data = await res.json() as WorkExperience[];
-        setExperiences(data);
-      } catch (error) {
-        console.error("Failed to load work experiences:", error);
-      }
-    }
-
-    fetchWorkExperiences();
-  }, [language]);
+  const experiences = useDataResource<WorkExperience[]>(
+    "work-experience",
+    language,
+    []
+  );
 
   return (
-    <Container className="py-12">
-      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+    <Container className="py-10 sm:py-12">
+      <h1 className="mb-6 text-3xl font-bold tracking-tight sm:mb-8 sm:text-4xl md:text-5xl">
         {t.workExperience.title}
       </h1>
 
-      <p className="text-lg text-muted-foreground mb-12">
+      <p className="mb-10 text-base text-muted-foreground sm:mb-12 sm:text-lg">
         {t.workExperience.description}
       </p>
 
@@ -39,12 +30,12 @@ export default function WorkExperiencePage() {
           {experiences.map((exp) => (
             <article
               key={exp.id}
-              className="p-6 rounded-lg border border-border hover:border-accent transition-colors bg-muted/30"
+              className="min-w-0 rounded-lg border border-border bg-muted/30 p-4 transition-colors hover:border-accent sm:p-6"
             >
               {/* Header */}
               <div className="mb-4">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex-1">
+                <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="min-w-0 flex-1">
                     <h2 className="text-2xl font-bold mb-1">{exp.company}</h2>
                     <p className="text-lg text-muted-foreground">
                       {exp.position}
@@ -76,20 +67,7 @@ export default function WorkExperiencePage() {
                 <h3 className="text-sm font-semibold text-foreground mb-2">
                   {t.workExperience.workDescription}
                 </h3>
-                <ul className="space-y-1">
-                  {exp.description.map((item: RichTextItem, idx: number) => {
-                    // Check if item is an object with isHeading property
-                    const isHeading = typeof item === "object" && item.isHeading;
-                    const text = typeof item === "object" ? item.title : item;
-
-                    return (
-                      <li key={idx} className={`${isHeading ? "text-foreground font-semibold" : "text-muted-foreground"} flex gap-2 text-sm`}>
-                        {!isHeading && <span className="text-accent">•</span>}
-                        <span className={isHeading ? "mt-2 mb-1 block" : ""}>{text}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <RichTextList items={exp.description} />
               </div>
             </article>
           ))}

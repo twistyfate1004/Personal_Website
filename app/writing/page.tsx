@@ -6,8 +6,8 @@ export default function WritingPage() {
   const posts = getAllPosts();
 
   return (
-    <Container className="py-12">
-      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+    <Container className="py-10 sm:py-12">
+      <h1 className="mb-6 text-3xl font-bold tracking-tight sm:mb-8 sm:text-4xl md:text-5xl">
         Writing
       </h1>
 

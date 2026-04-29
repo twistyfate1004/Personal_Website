@@ -19,7 +19,7 @@ export function MediaGallery({ mediaList, title }: MediaGalleryProps) {
   return (
     <>
       {/* Media grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {mediaList.map((media, index) => (
           <div
             key={index}
@@ -63,18 +63,19 @@ export function MediaGallery({ mediaList, title }: MediaGalleryProps) {
       {/* Modal for full-size media */}
       {selectedMedia && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-3 sm:p-4"
           onClick={() => setSelectedMedia(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            className="absolute right-3 top-3 z-10 rounded-md bg-black/50 p-1 text-white transition-colors hover:text-gray-300 sm:right-4 sm:top-4"
             onClick={() => setSelectedMedia(null)}
+            aria-label="关闭"
           >
             <X className="w-8 h-8" />
           </button>
 
           <div
-            className="relative max-w-5xl max-h-[90vh] w-full"
+            className="relative max-h-[88vh] w-full max-w-5xl"
             onClick={(e) => e.stopPropagation()}
           >
             {selectedMedia.type === "image" ? (
@@ -83,7 +84,7 @@ export function MediaGallery({ mediaList, title }: MediaGalleryProps) {
                 alt="Full size"
                 width={1920}
                 height={1080}
-                className="w-full h-auto object-contain"
+                className="max-h-[88vh] w-full object-contain"
                 unoptimized
               />
             ) : (
@@ -91,7 +92,7 @@ export function MediaGallery({ mediaList, title }: MediaGalleryProps) {
                 src={selectedMedia.url}
                 controls
                 autoPlay
-                className="w-full max-h-[90vh]"
+                className="max-h-[88vh] w-full"
               >
                 您的浏览器不支持视频播放。
               </video>

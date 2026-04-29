@@ -1,5 +1,6 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Project } from "@/lib/data";
+import { RichTextList } from "@/components/ui/RichTextList";
 
 interface ProjectCardProps {
   project: Project;
@@ -10,12 +11,12 @@ interface ProjectCardProps {
  */
 export function ProjectCard({ project }: ProjectCardProps) {
   // Handle description that can be either string or array
-  const description = typeof project.description === 'string'
+  const description = typeof project.description === "string"
     ? [project.description]
     : project.description;
 
   return (
-    <article className="p-6 rounded-lg border border-border hover:border-accent transition-colors bg-muted/30">
+    <article className="min-w-0 rounded-lg border border-border bg-muted/30 p-4 transition-colors hover:border-accent sm:p-6">
       {/* Header with title */}
       <div className="mb-3">
         <h3 className="text-2xl font-bold mb-1">{project.title}</h3>
@@ -24,20 +25,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       {/* Description */}
       {description && description.length > 0 && (
         <div className="mb-4">
-          <ul className="space-y-1">
-            {description.map((item, idx) => {
-              // Check if item is an object with isHeading property
-              const isHeading = typeof item === 'object' && item.isHeading;
-              const text = typeof item === 'object' ? item.title : item;
-
-              return (
-                <li key={idx} className={`${isHeading ? 'text-foreground font-semibold' : 'text-muted-foreground'} flex gap-2 text-sm`}>
-                  {!isHeading && <span className="text-accent">•</span>}
-                  <span className={isHeading ? 'mt-2 mb-1 block' : ''}>{text}</span>
-                </li>
-              );
-            })}
-          </ul>
+          <RichTextList items={description} />
         </div>
       )}
 
@@ -58,7 +46,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       )}
 
       {/* Demo and Code links */}
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         {project.links.github && (
           <a
             href={project.links.github}

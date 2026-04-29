@@ -19,10 +19,6 @@
 
 # production
 /build
-/storage
-*.db
-*.db-shm
-*.db-wal
 
 # misc
 .DS_Store

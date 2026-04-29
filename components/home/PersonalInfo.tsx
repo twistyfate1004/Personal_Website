@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Calendar, User, Star } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SiteConfig } from "@/lib/data";
+import { useDataResource } from "@/hooks/useDataResource";
 
 /**
  * Personal Information section
@@ -11,21 +11,7 @@ import { SiteConfig } from "@/lib/data";
  */
 export function PersonalInfo() {
   const { language, t } = useLanguage();
-  const [config, setConfig] = useState<SiteConfig | null>(null);
-
-  useEffect(() => {
-    async function fetchConfig() {
-      try {
-        const res = await fetch(`/api/data/config?lang=${language}`);
-        const data = await res.json() as SiteConfig;
-        setConfig(data);
-      } catch (error) {
-        console.error("Failed to load config:", error);
-      }
-    }
-
-    fetchConfig();
-  }, [language]);
+  const config = useDataResource<SiteConfig | null>("config", language, null);
 
   if (!config) {
     return null;
@@ -113,7 +99,7 @@ export function PersonalInfo() {
             return (
               <div
                 key={index}
-                className="flex flex-col p-4 rounded-lg bg-muted/30"
+                className="flex min-w-0 flex-col rounded-lg bg-muted/30 p-4"
               >
                 {content}
               </div>

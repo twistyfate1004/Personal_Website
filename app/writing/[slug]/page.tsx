@@ -22,7 +22,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <Container className="py-12">
+    <Container className="py-10 sm:py-12">
       <TableOfContents />
 
       <Link
@@ -35,10 +35,10 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
       <article>
         <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             {post.title}
           </h1>
-          <div className="flex items-center gap-4 text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-muted-foreground">
             <time dateTime={post.date}>{formatDate(post.date)}</time>
             {post.readingTime && (
               <span>• {post.readingTime} min read</span>

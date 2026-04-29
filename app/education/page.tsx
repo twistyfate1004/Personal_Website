@@ -1,36 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Container } from "@/components/layout/Container";
 import { MapPin, Calendar, Award } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Education, RichTextItem } from "@/lib/data";
+import { Education } from "@/lib/data";
+import { useDataResource } from "@/hooks/useDataResource";
+import { RichTextList } from "@/components/ui/RichTextList";
 
 export default function EducationPage() {
   const { language, t } = useLanguage();
-  const [education, setEducation] = useState<Education[]>([]);
-
-  useEffect(() => {
-    async function fetchEducation() {
-      try {
-        const res = await fetch(`/api/data/education?lang=${language}`);
-        const data = await res.json() as Education[];
-        setEducation(data);
-      } catch (error) {
-        console.error("Failed to load education:", error);
-      }
-    }
-
-    fetchEducation();
-  }, [language]);
+  const education = useDataResource<Education[]>("education", language, []);
 
   return (
-    <Container className="py-12">
-      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+    <Container className="py-10 sm:py-12">
+      <h1 className="mb-6 text-3xl font-bold tracking-tight sm:mb-8 sm:text-4xl md:text-5xl">
         {t.education.title}
       </h1>
 
-      <p className="text-lg text-muted-foreground mb-12">
+      <p className="mb-10 text-base text-muted-foreground sm:mb-12 sm:text-lg">
         {t.education.description}
       </p>
 
@@ -39,12 +26,12 @@ export default function EducationPage() {
           {education.map((edu) => (
             <article
               key={edu.id}
-              className="p-6 rounded-lg border border-border hover:border-accent transition-colors bg-muted/30"
+              className="min-w-0 rounded-lg border border-border bg-muted/30 p-4 transition-colors hover:border-accent sm:p-6"
             >
               {/* Header */}
               <div className="mb-4">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex-1">
+                <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="min-w-0 flex-1">
                     <h2 className="text-2xl font-bold mb-1">{edu.institution}</h2>
                     <p className="text-lg text-muted-foreground">
                       {edu.degree}{language === "en" ? (edu.major ? " in " : "") : (edu.major ? " —— " : "")}{edu.major}
@@ -102,19 +89,7 @@ export default function EducationPage() {
                   <h3 className="text-sm font-semibold text-foreground mb-2">
                     {t.education.achievements}
                   </h3>
-                  <ul className="space-y-1">
-                    {edu.achievements.map((achievement: RichTextItem, idx: number) => {
-                      const isHeading = typeof achievement === "object" && achievement.isHeading;
-                      const text = typeof achievement === "object" ? achievement.title : achievement;
-
-                      return (
-                        <li key={idx} className={`${isHeading ? "text-foreground font-semibold" : "text-muted-foreground"} flex gap-2 text-sm`}>
-                          {!isHeading && <span className="text-accent">•</span>}
-                          <span className={isHeading ? "mt-2 mb-1 block" : ""}>{text}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  <RichTextList items={edu.achievements} />
                 </div>
               )}
             </article>
