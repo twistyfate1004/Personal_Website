@@ -13,15 +13,15 @@ export default function AboutPage() {
   const skillsAndInterests = getSkillsAndInterests();
 
   return (
-    <Container className="py-12">
-      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+    <Container className="py-10 sm:py-12">
+      <h1 className="mb-6 text-3xl font-bold tracking-tight sm:mb-8 sm:text-4xl md:text-5xl">
         About
       </h1>
 
       {/* Bio section */}
       <section className="mb-12">
         <div className="prose prose-neutral dark:prose-invert max-w-none">
-          <p className="text-lg leading-relaxed whitespace-pre-line">
+          <p className="text-base leading-relaxed whitespace-pre-line sm:text-lg">
             {config.bio}
           </p>
         </div>
@@ -82,11 +82,11 @@ export default function AboutPage() {
               >
                 <div className="absolute left-0 top-0 w-3 h-3 -translate-x-[9px] rounded-full bg-accent" />
 
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                <div className="mb-2 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                   <h3 className="text-lg font-semibold">
                     {typeIcons[item.type]} {item.title}
                   </h3>
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-sm text-muted-foreground sm:whitespace-nowrap">
                     {item.year}
                   </span>
                 </div>

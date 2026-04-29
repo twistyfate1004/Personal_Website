@@ -1,130 +1,160 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import fs from "fs";
+import path from "path";
 
-import { useState, useEffect } from "react";
-import { Hero } from "@/components/home/Hero";
-import { PersonalInfo } from "@/components/home/PersonalInfo";
-import { Container } from "@/components/layout/Container";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { SkillsAndInterests, SkillCategory, TimelineItem } from "@/lib/data";
+const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
 
-const typeIcons: { [key: string]: string } = {
-  work: "💼",
-  education: "🎓",
-  other: "📍",
+type CoverImage = {
+  src: string;
 };
 
-export default function Home() {
-  const { language, t } = useLanguage();
-  const [timeline, setTimeline] = useState<TimelineItem[]>([]);
-  const [skillsAndInterests, setSkillsAndInterests] = useState<SkillsAndInterests>({
-    skills: [],
-    interests: [],
+function getCoverImages(): CoverImage[] {
+  const imagesDirectory = path.join(process.cwd(), "public", "images");
+
+  return fs
+    .readdirSync(imagesDirectory)
+    .filter((fileName) => imageExtensions.has(path.extname(fileName).toLowerCase()))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    .map((fileName) => ({
+      src: `/images/${encodeURIComponent(fileName)}`,
+    }));
+}
+
+function createCoverColumns(images: CoverImage[], columnCount = 5) {
+  if (images.length === 0) {
+    return [];
+  }
+
+  return Array.from({ length: columnCount }, (_, columnIndex) => {
+    const columnLength = Math.max(6, Math.ceil(images.length / columnCount) + 2);
+
+    return Array.from({ length: columnLength }, (_, imageIndex) => {
+      const imagePosition = (columnIndex * columnLength + imageIndex) % images.length;
+      return images[imagePosition];
+    });
   });
+}
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const [timelineRes, skillsRes] = await Promise.all([
-          fetch(`/api/data/timeline?lang=${language}`),
-          fetch(`/api/data/skills-interests?lang=${language}`),
-        ]);
+const coverColumns = createCoverColumns(getCoverImages());
 
-        const [timelineData, skillsData] = await Promise.all([
-          timelineRes.json() as Promise<TimelineItem[]>,
-          skillsRes.json() as Promise<SkillsAndInterests>,
-        ]);
-
-        setTimeline(timelineData);
-        setSkillsAndInterests(skillsData);
-      } catch (error) {
-        console.error("Failed to load data:", error);
-      }
-    }
-
-    fetchData();
-  }, [language]);
-
+function TeruTeruLogo() {
   return (
-    <Container>
-      <Hero />
-      <PersonalInfo />
+    <svg
+      className="cover-brand-logo"
+      viewBox="0 0 88 104"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M44 13V4"
+        stroke="currentColor"
+        strokeWidth="3.4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M21 53C15.6 60.3 11.3 74.1 8.4 91.4C17 88.9 23 90.7 28.3 95.1C33 99 39 98.3 44 91.8C49 98.3 55 99 59.7 95.1C65 90.7 71 88.9 79.6 91.4C76.7 74.1 72.4 60.3 67 53"
+        stroke="currentColor"
+        strokeWidth="3.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M23.5 55.7C33.8 61.3 54.2 61.3 64.5 55.7"
+        stroke="currentColor"
+        strokeWidth="2.8"
+        strokeLinecap="round"
+        opacity="0.72"
+      />
+      <circle
+        cx="44"
+        cy="35"
+        r="27"
+        stroke="currentColor"
+        strokeWidth="3.6"
+      />
+      <path
+        d="M34 32.8H34.2"
+        stroke="currentColor"
+        strokeWidth="5.4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M53.8 32.8H54"
+        stroke="currentColor"
+        strokeWidth="5.4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M34.2 44.3C37 48.5 40.2 50.3 44 50.3C47.8 50.3 51 48.5 53.8 44.3"
+        stroke="currentColor"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M62.2 69.8C64.4 75 65.8 80.2 66.6 85.4"
+        stroke="currentColor"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+        opacity="0.46"
+      />
+    </svg>
+  );
+}
 
-      {/* Skills section */}
-      {skillsAndInterests.skills && skillsAndInterests.skills.length > 0 && (
-        <section id="skills" className="py-8 border-t border-border">
-          <h2 className="text-sm font-semibold text-foreground tracking-wide mb-6">
-            {t.home.skills}
-          </h2>
-          <div className="space-y-6">
-            {skillsAndInterests.skills.map((skillGroup: SkillCategory) => (
-              <div key={skillGroup.category}>
-                <h3 className="text-sm font-semibold text-foreground tracking-wide mb-3">
-                  {skillGroup.category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {skillGroup.items.map((skill: string, skillIndex: number) => (
-                    <span
-                      key={skillIndex}
-                      className="px-3 py-1 bg-muted rounded-md text-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Interests section */}
-      {skillsAndInterests.interests && skillsAndInterests.interests.length > 0 && (
-        <section id="interests" className="py-8 border-t border-border">
-          <h2 className="text-sm font-semibold text-foreground tracking-wide mb-6">
-            {t.home.interests}
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {skillsAndInterests.interests.map((interest: string, index: number) => (
-              <span
-                key={index}
-                className="px-3 py-1 bg-accent/10 text-accent rounded-md text-sm"
-              >
-                {interest}
-              </span>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Timeline section */}
-      {timeline.length > 0 && (
-        <section id="timeline" className="py-8 border-t border-border">
-          <h2 className="text-sm font-semibold text-foreground tracking-wide mb-6">
-            {t.home.timeline}
-          </h2>
-          <div className="space-y-6">
-            {timeline.map((item: TimelineItem, index: number) => (
+export default function CoverPage() {
+  return (
+    <div className="cover-page min-h-screen overflow-hidden">
+      <div className="cover-image-wall" aria-hidden="true">
+        {coverColumns.map((column, columnIndex) => (
+          <div
+            key={columnIndex}
+            className={`cover-marquee-column cover-marquee-column-${columnIndex + 1}`}
+          >
+            {[...column, ...column].map((image, imageIndex) => (
               <div
-                key={index}
-                className="relative pl-6 pb-6 border-l-2 border-border last:pb-0 last:border-0"
+                className="cover-photo-frame"
+                key={`${image.src}-${imageIndex}`}
               >
-                <div className="absolute left-0 top-0 w-3 h-3 -translate-x-[9px] rounded-full bg-accent" />
-
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                  <h3 className="text-lg font-semibold">
-                    {typeIcons[item.type]} {item.title}
-                  </h3>
-                  <span className="text-sm text-muted-foreground">
-                    {item.year}
-                  </span>
-                </div>
-
-                <p className="text-muted-foreground">{item.description}</p>
+                <Image
+                  src={image.src}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 40vw, 18vw"
+                  priority={columnIndex < 2 && imageIndex < 2}
+                  unoptimized
+                />
               </div>
             ))}
           </div>
-        </section>
-      )}
-    </Container>
+        ))}
+      </div>
+
+      <section className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl items-center px-4 py-16 sm:px-6 lg:px-8">
+        <div className="cover-copy w-full max-w-3xl text-center sm:text-left">
+          <div className="cover-brand mb-7" aria-label="Growing Margins">
+            <h1>Growing Margins</h1>
+            <TeruTeruLogo />
+          </div>
+          <p className="cover-name mb-5">
+            江博源 / Tristan Byron
+          </p>
+          <p className="cover-body mx-auto mb-3 max-w-xl text-base leading-8 sm:mx-0 sm:text-lg">
+            四川大学 ➡️ Waseda University  
+          </p>
+          <p className="cover-body mx-auto mb-5 max-w-xl text-base leading-8 sm:mx-0 sm:text-lg">
+            海鸥跟随渔船是因为他们相信沙丁鱼会被扔进大海
+          </p>
+      
+
+          <Link href="/home" className="cover-enter-button">
+            <span>Enter Archive</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }

@@ -2,13 +2,13 @@ import { Container } from "@/components/layout/Container";
 
 export default function PhotosPage() {
   return (
-    <Container className="py-12">
-      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+    <Container className="py-10 sm:py-12">
+      <h1 className="mb-6 text-3xl font-bold tracking-tight sm:mb-8 sm:text-4xl md:text-5xl">
         Photos
       </h1>
 
       <section className="prose prose-neutral dark:prose-invert max-w-none">
-        <p className="text-lg text-muted-foreground">
+        <p className="text-base text-muted-foreground sm:text-lg">
           Photography coming soon...
         </p>
         <p className="text-muted-foreground">

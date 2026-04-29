@@ -14,9 +14,9 @@ export function PostCard({ post }: PostCardProps) {
   return (
     <Link
       href={`/writing/${post.slug}`}
-      className="block p-6 rounded-lg border border-border hover:border-accent hover:bg-muted/50 transition-all group"
+      className="group block min-w-0 rounded-lg border border-border p-4 transition-all hover:border-accent hover:bg-muted/50 sm:p-6"
     >
-      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
+      <div className="mb-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
         <div className="flex items-center gap-1">
           <Calendar className="w-4 h-4" />
           <time dateTime={post.date}>{formatDate(post.date)}</time>
