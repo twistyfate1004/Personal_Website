@@ -13,13 +13,14 @@
       "计算智能",
       "物联网与大数据",
       "启发式算法",
-      "机器学习"
+      "机器学习",
+      "神经网络"
     ],
     "achievements": [
       {"isHeading": true, "title": "奖学金"},
       "Waseda University Partial Tuition-Waiver Scholarship for Privately Financed International Students",
       {"isHeading": true, "title": "研究方向"},
-      "多模态大模型的应用"
+      "Multi-Agent"
     ]
   },
   {

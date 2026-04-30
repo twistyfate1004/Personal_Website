@@ -534,9 +534,9 @@ body:has(.archive-home-shell) header button {
   --accent-foreground: #120d08;
   position: relative;
   background:
-    radial-gradient(circle at 18% 0%, rgba(194, 126, 58, 0.2), transparent 26rem),
-    radial-gradient(circle at 92% 16%, rgba(112, 75, 42, 0.18), transparent 24rem),
-    linear-gradient(180deg, #0c0805 0%, #15100b 48%, #080604 100%);
+    radial-gradient(circle at 18% 10%, rgba(128, 73, 34, 0.22), transparent 30%),
+    radial-gradient(circle at 84% 24%, rgba(182, 118, 55, 0.12), transparent 34%),
+    linear-gradient(135deg, #070504 0%, #130b07 46%, #070504 100%);
   color: var(--foreground);
 }
 
@@ -547,10 +547,10 @@ body:has(.archive-home-shell) header button {
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(255, 222, 170, 0.025) 0 1px, transparent 1px 72px),
-    linear-gradient(180deg, rgba(255, 222, 170, 0.018) 0 1px, transparent 1px 86px),
-    radial-gradient(circle at center, transparent 45%, rgba(0, 0, 0, 0.42) 100%);
-  opacity: 0.95;
+    linear-gradient(90deg, rgba(255, 206, 135, 0.035) 0 1px, transparent 1px 7px),
+    linear-gradient(180deg, rgba(255, 206, 135, 0.026) 0 1px, transparent 1px 9px);
+  opacity: 0.4;
+  mix-blend-mode: soft-light;
 }
 
 .dark body:not(:has(.cover-page))::after {
@@ -559,9 +559,12 @@ body:has(.archive-home-shell) header button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.34;
-  mix-blend-mode: soft-light;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+  background:
+    radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.48) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23f4dcc0' fill-opacity='.045'%3E%3Ccircle cx='16' cy='26' r='.75'/%3E%3Ccircle cx='58' cy='42' r='.55'/%3E%3Ccircle cx='108' cy='20' r='.65'/%3E%3Ccircle cx='26' cy='102' r='.55'/%3E%3Ccircle cx='92' cy='116' r='.7'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, 140px 140px;
+  opacity: 0.9;
+  mix-blend-mode: normal;
 }
 
 .dark body:not(:has(.cover-page)) > div {

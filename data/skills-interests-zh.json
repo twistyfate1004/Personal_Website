@@ -2,15 +2,19 @@
   "skills": [
     {
       "category": "编程",
-      "items": ["Python", "C++", "SQL"]
+      "items": ["Python", "SQL","Vibe Coding"]
     },
     {
-      "category": "产品",
+      "category": "产品原型工具",
       "items": ["Figma", "Axure"]
     },
     {
-      "category": "王者荣耀",
-      "items": ["干将莫邪", "女娲", "曹操", "少司缘", "空空儿"]
+      "category": "办公",
+      "items": ["Office 全家桶", "OpenClaw","各类 AI 产品都有涉足","PhotoShop","剪视频","写公众号"]
+    },
+    {
+      "category": "一些拿不上台面的",
+      "items": ["开车跑长途", "打游戏","画饼"]
     }
   ],
   "interests": [

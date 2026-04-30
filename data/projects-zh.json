@@ -3,10 +3,10 @@
     "id": "personal-website",
     "title": "个人主页",
     "description": "一个vibe coding项目，目前正在搭建中……",
-    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
+    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "MDX","Vibe Coding"],
     "links": {
-      "github": "https://github.com/username/website",
-      "demo": "https://riibberbzl.websitezai.com/"
+      "github": "https://github.com/twistyfate1004/Growing-Margins",
+      "demo": "https://personalwebsite-production-471d.up.railway.app/"
     },
     "featured": true
   },
@@ -20,7 +20,7 @@
     "tech": ["Python","LSTM"],
     "links": {
       "github": "https://github.com/username/task-manager",
-      "demo": "https://weather-demo.vercel.app"
+      "demo": "https://github.com/username/task-manager"
     },
     "featured": true
   },
@@ -31,10 +31,10 @@
       {"isHeading": true, "title": "本科毕业论文（含金量你懂的）"},
       "独立完成信用卡欺诈检测系统的建模与实验，使用堆叠自编码器（SAE）与关系门控时序图神经网络（RGTAN）构建模型，实现高效异常识别，MSE、ROC-AUC、AP等指标优于基线模型，显著提升检测准确率与鲁棒性。"
     ],
-    "tech": ["RGTAN", "SAE", "Python","Matlab"],
+    "tech": ["RGTAN", "SAE", "Python","本科毕业论文"],
     "links": {
-      "github": "https://github.com/username/weather-app",
-      "demo": "https://weather-demo.vercel.app"
+      "github": "https://github.com/username/task-manager",
+      "demo": "https://github.com/username/task-manager"
     },
     "featured": false
   },
@@ -45,10 +45,10 @@
       {"isHeading": true, "title": "其实就是写SQL，搭看板"},
       "基于花旗银行虚拟金融app数据，构建用户行为模型与界面热力图，分析使用路径与偏好；结合转化漏斗与session分析，识别关键流失环节及理财产品偏好，支持产品策略优化与个性化推荐。结项产出《基于用户行为分析的理财产品广告投放策略》报告。"
     ],
-    "tech": ["RGTAN", "SAE", "Python","Matlab"],
+    "tech": ["转化漏斗", "Session分析", "SQL","Matlab"],
     "links": {
-      "github": "https://github.com/username/weather-app",
-      "demo": "https://weather-demo.vercel.app"
+      "github": "https://github.com/username/task-manager",
+      "demo": "https://github.com/username/task-manager"
     },
     "featured": false
   }

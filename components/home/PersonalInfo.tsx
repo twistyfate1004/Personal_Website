@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Calendar, User, Star } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SiteConfig } from "@/lib/data";
 import { useDataResource } from "@/hooks/useDataResource";
+import { RichTextList } from "@/components/ui/RichTextList";
 
 /**
  * Personal Information section
@@ -27,13 +28,13 @@ export function PersonalInfo() {
   const infoItems = [
     {
       icon: Mail,
-      label: "Email",
+      label: "邮箱",
       value: personalInfo.email,
       href: personalInfo.email ? `mailto:${personalInfo.email}` : undefined,
     },
     {
       icon: Phone,
-      label: "Phone",
+      label: "手机号",
       value: personalInfo.phone,
       href: personalInfo.phone ? `tel:${personalInfo.phone}` : undefined,
     },
@@ -44,17 +45,17 @@ export function PersonalInfo() {
     },
     {
       icon: Star,
-      label: "Zodiac",
+      label: "星座",
       value: personalInfo.zodiac,
     },
     {
       icon: Calendar,
-      label: "Age",
+      label: "年龄",
       value: personalInfo.age ? `${personalInfo.age}岁` : undefined,
     },
     {
       icon: MapPin,
-      label: "Hometown",
+      label: "家乡",
       value: personalInfo.hometown,
     },
     {
@@ -114,9 +115,28 @@ export function PersonalInfo() {
           <h2 className="text-sm font-semibold text-foreground tracking-wide mb-4">
             {t.home.selfDescription}
           </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            {config.selfDescription}
-          </p>
+          {typeof config.selfDescription === "string" ? (
+            <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+              {config.selfDescription}
+            </p>
+          ) : (
+            <RichTextList items={config.selfDescription} />
+          )}
+        </section>
+      )}
+
+      {config.openingStyle && (
+        <section className="py-8 border-t border-border">
+          <h2 className="text-sm font-semibold text-foreground tracking-wide mb-4">
+            {t.home.openingStyle}
+          </h2>
+          {typeof config.openingStyle === "string" ? (
+            <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+              {config.openingStyle}
+            </p>
+          ) : (
+            <RichTextList items={config.openingStyle} />
+          )}
         </section>
       )}
     </>

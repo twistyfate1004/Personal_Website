@@ -16,6 +16,7 @@ export const translations = {
       timeline: "Timeline",
       personalInfo: "Personal Info",
       selfDescription: "About Me",
+      openingStyle: "How to Know Me",
     },
     // Work Experience page
     workExperience: {
@@ -80,8 +81,9 @@ export const translations = {
       skills: "技能",
       interests: "兴趣",
       timeline: "成长履历（这辈子有了）",
-      personalInfo: "个人信息",
-      selfDescription: "自我评价",
+      personalInfo: "基本信息",
+      selfDescription: "关于我自己",
+      openingStyle: "打开方式",
     },
     // Work Experience page
     workExperience: {
@@ -113,7 +115,7 @@ export const translations = {
     // Projects page
     projects: {
       title: "项目经历",
-      description: "我的个人和专业项目展示",
+      description: "一些个还算拿得出手的东西吧……",
       allProjects: "所有项目",
       featuredProjects: "精选项目",
       viewProject: "查看项目",

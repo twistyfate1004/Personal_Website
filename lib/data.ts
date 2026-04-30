@@ -24,7 +24,8 @@ export interface SiteConfig {
   bio: string;
   avatar?: string;
   motto?: string;
-  selfDescription?: string;
+  selfDescription?: string | RichTextItem[];
+  openingStyle?: string | RichTextItem[];
   personalInfo?: PersonalInfo;
   socials: SocialLink[];
 }
