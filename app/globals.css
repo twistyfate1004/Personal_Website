@@ -2,12 +2,12 @@
 
 /* Custom CSS variables for theming */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --border: #e5e5e5;
-  --accent: #2563eb;
+  --background: #f7f3ea;
+  --foreground: #1e201d;
+  --muted: #ebe5d8;
+  --muted-foreground: #66716b;
+  --border: rgba(30, 32, 29, 0.16);
+  --accent: #cf3f26;
   --accent-foreground: #ffffff;
 }
 
@@ -27,12 +27,13 @@
 
 /* Dark mode (toggled via class) */
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --muted: #1a1a1a;
-  --muted-foreground: #a3a3a3;
-  --border: #262626;
-  --accent: #3b82f6;
+  --background: #090604;
+  --foreground: #f4ead8;
+  --muted: #241811;
+  --muted-foreground: #c4b6a2;
+  --border: rgba(229, 198, 151, 0.2);
+  --accent: #d5a15d;
+  --accent-foreground: #160f09;
 }
 
 /* Base styles */
@@ -51,6 +52,81 @@ body {
   line-height: 1.625;
   min-height: 100%;
   overflow-x: hidden;
+}
+
+body:not(:has(.cover-page)) {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(207, 63, 38, 0.1), transparent 9rem),
+    radial-gradient(circle at 88% 18%, rgba(24, 105, 150, 0.12), transparent 12rem),
+    linear-gradient(180deg, #fbfaf5 0%, #f3efe4 100%);
+  color: #1e201d;
+}
+
+.dark body:not(:has(.cover-page)) {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(128, 73, 34, 0.22), transparent 30%),
+    radial-gradient(circle at 84% 24%, rgba(182, 118, 55, 0.12), transparent 34%),
+    linear-gradient(135deg, #070504 0%, #130b07 46%, #070504 100%);
+  color: #f4ead8;
+}
+
+body:not(:has(.cover-page)) header,
+body:not(:has(.cover-page)) footer {
+  position: relative;
+  z-index: 5;
+  border-color: rgba(30, 32, 29, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 245, 0.94), rgba(247, 243, 234, 0.86)),
+    #f7f3ea;
+  color: #1e201d;
+  box-shadow: 0 1px 0 rgba(30, 32, 29, 0.05);
+  backdrop-filter: blur(18px);
+}
+
+body:not(:has(.cover-page)) header button {
+  border-color: rgba(30, 32, 29, 0.12);
+  background: rgba(255, 255, 255, 0.54);
+  color: rgba(30, 32, 29, 0.78);
+}
+
+body:not(:has(.cover-page)) .site-mark {
+  display: inline-flex;
+  width: 2.55rem;
+  height: 2.55rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  transition:
+    transform 180ms ease,
+    color 180ms ease;
+}
+
+body:not(:has(.cover-page)) .site-mark-logo {
+  width: 2.26rem;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+body:not(:has(.cover-page)) .site-mark:hover {
+  transform: translateY(-1px);
+}
+
+.dark body:not(:has(.cover-page)) header,
+.dark body:not(:has(.cover-page)) footer {
+  border-color: rgba(229, 198, 151, 0.18);
+  background:
+    linear-gradient(180deg, rgba(16, 9, 5, 0.94), rgba(10, 6, 4, 0.84)),
+    #090604;
+  color: #f4ead8;
+  box-shadow: 0 1px 0 rgba(255, 219, 160, 0.06);
+}
+
+.dark body:not(:has(.cover-page)) header button {
+  border-color: rgba(229, 198, 151, 0.2);
+  background: rgba(244, 223, 190, 0.06);
+  color: rgba(244, 234, 216, 0.88);
 }
 
 img,
@@ -162,6 +238,917 @@ h4 { font-size: 1.25rem; }
 .prose img {
   border-radius: 0.5rem;
   margin: 1.5em 0;
+}
+
+/* Archive home page */
+body:has(.archive-home-shell) {
+  --background: #f7f3ea;
+  --foreground: #1e201d;
+  --muted: #ebe5d8;
+  --muted-foreground: #66716b;
+  --border: rgba(30, 32, 29, 0.16);
+  --accent: #cf3f26;
+  --accent-foreground: #ffffff;
+  background: #f7f3ea;
+  color: #1e201d;
+}
+
+body:has(.archive-home-shell) header,
+body:has(.archive-home-shell) footer {
+  position: relative;
+  z-index: 5;
+  border-color: rgba(30, 32, 29, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 245, 0.94), rgba(247, 243, 234, 0.86)),
+    #f7f3ea;
+  color: #1e201d;
+  box-shadow: 0 1px 0 rgba(30, 32, 29, 0.05);
+  backdrop-filter: blur(18px);
+}
+
+body:has(.archive-home-shell) footer {
+  margin-top: 0;
+}
+
+body:has(.archive-home-shell) header a,
+body:has(.archive-home-shell) footer a {
+  text-shadow: none;
+}
+
+body:has(.archive-home-shell) header button {
+  border-color: rgba(30, 32, 29, 0.12);
+  background: rgba(255, 255, 255, 0.54);
+  color: rgba(30, 32, 29, 0.78);
+}
+
+.archive-home-shell {
+  position: relative;
+  isolation: isolate;
+  min-height: 100%;
+  overflow: hidden;
+  padding-block: clamp(1.2rem, 3vw, 2.8rem) clamp(3rem, 7vw, 6rem);
+  background:
+    radial-gradient(circle at 12% 16%, rgba(207, 63, 38, 0.1), transparent 9rem),
+    radial-gradient(circle at 88% 18%, rgba(24, 105, 150, 0.12), transparent 12rem),
+    linear-gradient(180deg, #fbfaf5 0%, #f3efe4 100%);
+}
+
+.archive-home-shell::before,
+.archive-home-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.archive-home-shell::before {
+  background:
+    linear-gradient(176deg, transparent 0 11%, rgba(45, 92, 84, 0.1) 11.1% 11.5%, transparent 11.6% 100%),
+    linear-gradient(6deg, transparent 0 28%, rgba(69, 138, 120, 0.12) 28.1% 28.5%, transparent 28.6% 100%),
+    linear-gradient(178deg, transparent 0 64%, rgba(23, 102, 156, 0.08) 64.1% 64.35%, transparent 64.45% 100%),
+    linear-gradient(90deg, rgba(31, 34, 31, 0.035) 0 1px, transparent 1px 18px);
+  opacity: 0.88;
+  mix-blend-mode: multiply;
+}
+
+.archive-home-shell::after {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill-opacity='.88'%3E%3Ccircle cx='25' cy='34' r='2.2' fill='%23cf3f26'/%3E%3Ccircle cx='96' cy='26' r='1.5' fill='%23186696'/%3E%3Ccircle cx='142' cy='56' r='1.9' fill='%23d6a421'/%3E%3Ccircle cx='52' cy='118' r='1.6' fill='%233a8069'/%3E%3Ccircle cx='154' cy='134' r='2.1' fill='%23db6f5d'/%3E%3C/g%3E%3Cg stroke='%231d211e' stroke-opacity='.12' stroke-width='.7' fill='none'%3E%3Cpath d='M10 78c32-10 54 8 86-2 24-7 44-16 74-6'/%3E%3Cpath d='M20 96c42 7 68-8 106-2 18 3 31 0 45-4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.56;
+  mix-blend-mode: multiply;
+}
+
+.archive-home {
+  position: relative;
+}
+
+.archive-home::before {
+  content: "";
+  position: absolute;
+  inset: 0.8rem -0.9rem;
+  z-index: -1;
+  border: 1px solid rgba(30, 32, 29, 0.1);
+  background: rgba(255, 255, 255, 0.34);
+  box-shadow:
+    0 34px 100px rgba(49, 43, 32, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.archive-home section {
+  border-color: rgba(30, 32, 29, 0.16);
+}
+
+.archive-home section:first-child {
+  border-top: 0;
+}
+
+.archive-home h1,
+.archive-home h2,
+.archive-home h3 {
+  color: rgba(25, 28, 25, 0.94);
+  letter-spacing: 0;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.archive-home h1 {
+  font-family: "Iowan Old Style", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 430;
+}
+
+.archive-home h2 {
+  color: rgba(17, 66, 56, 0.92);
+  font-weight: 680;
+  text-transform: uppercase;
+}
+
+.archive-home p,
+.archive-home a,
+.archive-home span {
+  text-shadow: none;
+}
+
+.archive-home .text-muted-foreground {
+  color: rgba(75, 83, 77, 0.82);
+}
+
+.archive-home .bg-muted,
+.archive-home .bg-muted\/30,
+.archive-home .bg-accent\/10 {
+  border: 1px solid rgba(30, 32, 29, 0.16);
+  background: rgba(255, 255, 255, 0.52);
+  color: rgba(29, 33, 30, 0.9);
+  box-shadow:
+    0 18px 42px rgba(49, 43, 32, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+}
+
+.archive-home .text-accent {
+  color: rgba(207, 63, 38, 0.96);
+}
+
+.archive-home .bg-accent {
+  background: #cf3f26;
+  box-shadow:
+    0 0 0 4px rgba(207, 63, 38, 0.12),
+    0 0 26px rgba(207, 63, 38, 0.2);
+}
+
+.archive-home img {
+  filter: saturate(0.78) contrast(1.02) brightness(1.02);
+}
+
+.archive-home [class*="rounded-lg"] {
+  border-radius: 8px;
+}
+
+.dark body:has(.archive-home-shell) {
+  --background: #090604;
+  --foreground: #f4ead8;
+  --muted: #241811;
+  --muted-foreground: #c4b6a2;
+  --border: rgba(229, 198, 151, 0.2);
+  --accent: #d5a15d;
+  --accent-foreground: #160f09;
+  background: #090604;
+  color: #f4ead8;
+}
+
+.dark body:has(.archive-home-shell) header,
+.dark body:has(.archive-home-shell) footer {
+  border-color: rgba(229, 198, 151, 0.18);
+  background:
+    linear-gradient(180deg, rgba(16, 9, 5, 0.94), rgba(10, 6, 4, 0.84)),
+    #090604;
+  color: #f4ead8;
+  box-shadow: 0 1px 0 rgba(255, 219, 160, 0.06);
+}
+
+.dark body:has(.archive-home-shell) header a,
+.dark body:has(.archive-home-shell) footer a {
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.54);
+}
+
+.dark body:has(.archive-home-shell) header button {
+  border-color: rgba(229, 198, 151, 0.2);
+  background: rgba(244, 223, 190, 0.06);
+  color: rgba(244, 234, 216, 0.88);
+}
+
+.dark .archive-home-shell {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(128, 73, 34, 0.22), transparent 30%),
+    radial-gradient(circle at 84% 24%, rgba(182, 118, 55, 0.12), transparent 34%),
+    linear-gradient(135deg, #070504 0%, #130b07 46%, #070504 100%);
+}
+
+.dark .archive-home-shell::before {
+  background:
+    linear-gradient(90deg, rgba(255, 206, 135, 0.035) 0 1px, transparent 1px 7px),
+    linear-gradient(180deg, rgba(255, 206, 135, 0.026) 0 1px, transparent 1px 9px);
+  opacity: 0.4;
+  mix-blend-mode: soft-light;
+}
+
+.dark .archive-home-shell::after {
+  background:
+    radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.48) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23f4dcc0' fill-opacity='.045'%3E%3Ccircle cx='16' cy='26' r='.75'/%3E%3Ccircle cx='58' cy='42' r='.55'/%3E%3Ccircle cx='108' cy='20' r='.65'/%3E%3Ccircle cx='26' cy='102' r='.55'/%3E%3Ccircle cx='92' cy='116' r='.7'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, 140px 140px;
+  opacity: 0.9;
+  mix-blend-mode: normal;
+}
+
+.dark .archive-home::before {
+  border: 1px solid rgba(229, 198, 151, 0.08);
+  background: rgba(20, 12, 8, 0.18);
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.44),
+    inset 0 1px 0 rgba(255, 239, 206, 0.04);
+}
+
+.dark .archive-home section {
+  border-color: rgba(229, 198, 151, 0.18);
+}
+
+.dark .archive-home h1,
+.dark .archive-home h2,
+.dark .archive-home h3 {
+  color: rgba(255, 244, 222, 0.96);
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.72),
+    0 18px 48px rgba(58, 28, 11, 0.46);
+}
+
+.dark .archive-home h2 {
+  color: rgba(229, 198, 151, 0.9);
+}
+
+.dark .archive-home p,
+.dark .archive-home a,
+.dark .archive-home span {
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.42);
+}
+
+.dark .archive-home .text-muted-foreground {
+  color: rgba(217, 202, 178, 0.78);
+}
+
+.dark .archive-home .bg-muted,
+.dark .archive-home .bg-muted\/30,
+.dark .archive-home .bg-accent\/10 {
+  border: 1px solid rgba(229, 198, 151, 0.16);
+  background: rgba(244, 213, 171, 0.07);
+  color: rgba(245, 229, 203, 0.9);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 237, 202, 0.06);
+}
+
+.dark .archive-home .text-accent {
+  color: rgba(225, 168, 91, 0.96);
+}
+
+.dark .archive-home .bg-accent {
+  background: #d5a15d;
+  box-shadow:
+    0 0 0 4px rgba(213, 161, 93, 0.12),
+    0 0 26px rgba(213, 161, 93, 0.28);
+}
+
+.dark .archive-home img {
+  filter: saturate(0.82) contrast(1.08) brightness(0.88);
+}
+
+/* Quinn-inspired dark editorial treatment */
+.dark body:not(:has(.cover-page)) {
+  --background: #090705;
+  --foreground: #f6ead8;
+  --muted: #17110c;
+  --muted-foreground: #c7b8a3;
+  --border: rgba(222, 184, 126, 0.22);
+  --accent: #d9b170;
+  --accent-foreground: #120d08;
+  position: relative;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(194, 126, 58, 0.2), transparent 26rem),
+    radial-gradient(circle at 92% 16%, rgba(112, 75, 42, 0.18), transparent 24rem),
+    linear-gradient(180deg, #0c0805 0%, #15100b 48%, #080604 100%);
+  color: var(--foreground);
+}
+
+.dark body:not(:has(.cover-page))::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 222, 170, 0.025) 0 1px, transparent 1px 72px),
+    linear-gradient(180deg, rgba(255, 222, 170, 0.018) 0 1px, transparent 1px 86px),
+    radial-gradient(circle at center, transparent 45%, rgba(0, 0, 0, 0.42) 100%);
+  opacity: 0.95;
+}
+
+.dark body:not(:has(.cover-page))::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.34;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+}
+
+.dark body:not(:has(.cover-page)) > div {
+  position: relative;
+  z-index: 1;
+}
+
+.dark body:not(:has(.cover-page)) header,
+.dark body:not(:has(.cover-page)) footer,
+.dark body:has(.archive-home-shell) header,
+.dark body:has(.archive-home-shell) footer {
+  border-color: rgba(246, 234, 216, 0.14);
+  background:
+    linear-gradient(180deg, rgba(17, 12, 8, 0.62), rgba(17, 12, 8, 0.26)),
+    rgba(12, 8, 5, 0.45);
+  color: var(--foreground);
+  box-shadow: none;
+  backdrop-filter: blur(12px) saturate(1.12);
+}
+
+.dark body:not(:has(.cover-page)) header > div,
+.dark body:has(.archive-home-shell) header > div {
+  max-width: none;
+  padding-inline: clamp(1rem, 2.6vw, 2rem);
+}
+
+.dark body:not(:has(.cover-page)) header a,
+.dark body:has(.archive-home-shell) header a {
+  color: rgba(246, 234, 216, 0.82);
+  text-shadow: none;
+}
+
+.dark body:not(:has(.cover-page)) header > div > div > a:first-child,
+.dark body:has(.archive-home-shell) header > div > div > a:first-child {
+  color: #fff2de;
+}
+
+.dark body:not(:has(.cover-page)) .site-mark,
+.dark body:has(.archive-home-shell) .site-mark {
+  color: rgba(255, 242, 222, 0.96);
+}
+
+.dark body:not(:has(.cover-page)) .site-mark:hover,
+.dark body:has(.archive-home-shell) .site-mark:hover {
+  color: #fff2de;
+}
+
+.dark body:not(:has(.cover-page)) header nav,
+.dark body:has(.archive-home-shell) header nav {
+  gap: 0.25rem;
+  border: 1px solid rgba(246, 234, 216, 0.14);
+  border-radius: 999px;
+  background: rgba(17, 12, 8, 0.26);
+  padding: 0.22rem;
+}
+
+.dark body:not(:has(.cover-page)) header nav a,
+.dark body:has(.archive-home-shell) header nav a {
+  position: relative;
+  border-radius: 999px;
+  padding: 0.42rem 0.78rem;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.dark body:not(:has(.cover-page)) header nav a:hover,
+.dark body:has(.archive-home-shell) header nav a:hover {
+  background: rgba(246, 234, 216, 0.14);
+  color: #fff2de;
+  transform: translateY(-1px);
+}
+
+.dark body:not(:has(.cover-page)) header nav a.text-accent,
+.dark body:has(.archive-home-shell) header nav a.text-accent {
+  background: #fff2de;
+  color: #17100a;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+}
+
+.dark body:not(:has(.cover-page)) header button,
+.dark body:has(.archive-home-shell) header button,
+.dark body:not(:has(.cover-page)) header a[aria-label="返回封面页"],
+.dark body:has(.archive-home-shell) header a[aria-label="返回封面页"] {
+  border: 1px solid rgba(246, 234, 216, 0.14);
+  background: rgba(246, 234, 216, 0.1);
+  color: rgba(246, 234, 216, 0.92);
+  box-shadow: none;
+}
+
+.dark body:not(:has(.cover-page)) header button:hover,
+.dark body:has(.archive-home-shell) header button:hover,
+.dark body:not(:has(.cover-page)) header a[aria-label="返回封面页"]:hover,
+.dark body:has(.archive-home-shell) header a[aria-label="返回封面页"]:hover {
+  background: rgba(246, 234, 216, 0.16);
+  color: #fff2de;
+  transform: translateY(-1px);
+}
+
+.dark main > div:not(.cover-page):not(.archive-home-shell),
+.dark .archive-home {
+  animation: dark-page-enter 520ms ease both;
+}
+
+.dark main > div:not(.cover-page):not(.archive-home-shell) > h1,
+.dark .archive-home h1 {
+  max-width: 12ch;
+  color: #fff2de;
+  font-family: "Iowan Old Style", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 430;
+  letter-spacing: 0;
+  line-height: 0.98;
+  text-shadow:
+    0 1px 18px rgba(0, 0, 0, 0.6),
+    0 24px 80px rgba(116, 63, 24, 0.28);
+}
+
+.dark main > div:not(.cover-page):not(.archive-home-shell) > p {
+  max-width: 44rem;
+  color: rgba(231, 213, 187, 0.72);
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+}
+
+.dark main > div:not(.cover-page):not(.archive-home-shell) > h1::after,
+.dark .archive-home section > h2::after {
+  content: "";
+  display: block;
+  width: min(100%, 8rem);
+  height: 1px;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, rgba(217, 177, 112, 0.75), transparent);
+}
+
+.dark .archive-home section,
+.dark main > div:not(.cover-page):not(.archive-home-shell) article {
+  border-color: rgba(222, 184, 126, 0.2);
+}
+
+.dark main > div:not(.cover-page):not(.archive-home-shell) article,
+.dark .archive-home .bg-muted,
+.dark .archive-home .bg-muted\/30,
+.dark .archive-home .bg-accent\/10,
+.dark main > div:not(.cover-page):not(.archive-home-shell) .bg-muted,
+.dark main > div:not(.cover-page):not(.archive-home-shell) .bg-muted\/30,
+.dark main > div:not(.cover-page):not(.archive-home-shell) .bg-accent\/10 {
+  border: 1px solid rgba(222, 184, 126, 0.18);
+  background:
+    linear-gradient(180deg, rgba(48, 33, 20, 0.66), rgba(22, 15, 10, 0.7)),
+    rgba(20, 13, 8, 0.62);
+  color: rgba(248, 235, 213, 0.92);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 238, 203, 0.06);
+  backdrop-filter: blur(14px) saturate(1.1);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.dark .archive-home {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.dark .archive-home > section {
+  min-width: 0;
+  border: 1px solid rgba(222, 184, 126, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(48, 33, 20, 0.58), rgba(22, 15, 10, 0.66)),
+    rgba(20, 13, 8, 0.56);
+  padding: clamp(1.35rem, 3vw, 2.2rem);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 238, 203, 0.06);
+  backdrop-filter: blur(14px) saturate(1.1);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.dark .archive-home > section:first-child,
+.dark .archive-home section:first-child {
+  border-top: 1px solid rgba(222, 184, 126, 0.18);
+}
+
+.dark .archive-home > section:hover {
+  transform: translateY(-2px);
+  border-color: rgba(217, 177, 112, 0.44);
+  box-shadow:
+    0 28px 78px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(217, 177, 112, 0.08),
+    inset 0 1px 0 rgba(255, 238, 203, 0.08);
+}
+
+.dark .archive-home > section > h2 {
+  margin-bottom: 1.5rem;
+}
+
+.dark .archive-home > section.py-8 {
+  padding-top: clamp(1.35rem, 3vw, 2.2rem);
+  padding-bottom: clamp(1.35rem, 3vw, 2.2rem);
+}
+
+.dark .archive-home > section .bg-muted,
+.dark .archive-home > section .bg-muted\/30,
+.dark .archive-home > section .bg-accent\/10 {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 238, 203, 0.05),
+    0 14px 34px rgba(0, 0, 0, 0.16);
+}
+
+.dark .archive-home > section .bg-muted:hover,
+.dark .archive-home > section .bg-muted\/30:hover,
+.dark .archive-home > section .bg-accent\/10:hover {
+  transform: none;
+  border-color: rgba(222, 184, 126, 0.22);
+}
+
+.dark main > div:not(.cover-page):not(.archive-home-shell) article:hover,
+.dark .archive-home .bg-muted:hover,
+.dark .archive-home .bg-muted\/30:hover,
+.dark .archive-home .bg-accent\/10:hover,
+.dark main > div:not(.cover-page):not(.archive-home-shell) .bg-muted:hover,
+.dark main > div:not(.cover-page):not(.archive-home-shell) .bg-muted\/30:hover,
+.dark main > div:not(.cover-page):not(.archive-home-shell) .bg-accent\/10:hover {
+  transform: translateY(-3px);
+  border-color: rgba(217, 177, 112, 0.44);
+  box-shadow:
+    0 28px 86px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(217, 177, 112, 0.08),
+    inset 0 1px 0 rgba(255, 238, 203, 0.08);
+}
+
+.dark main > div:not(.cover-page):not(.archive-home-shell) .text-muted-foreground,
+.dark .archive-home .text-muted-foreground {
+  color: rgba(212, 195, 169, 0.78);
+}
+
+.dark main > div:not(.cover-page):not(.archive-home-shell) h2,
+.dark main > div:not(.cover-page):not(.archive-home-shell) h3,
+.dark .archive-home h2,
+.dark .archive-home h3 {
+  color: rgba(255, 242, 222, 0.94);
+  letter-spacing: 0;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.38);
+}
+
+.dark main > div:not(.cover-page):not(.archive-home-shell) a:hover,
+.dark .archive-home a:hover {
+  color: #f0c987;
+}
+
+.dark .archive-home::before {
+  display: none;
+}
+
+@keyframes dark-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Light mode mirrors the dark layout, with a modern neutral palette */
+html:not(.dark) body:not(:has(.cover-page)) {
+  --background: #f7f7f4;
+  --foreground: #1f201d;
+  --muted: #ecebe6;
+  --muted-foreground: #74746c;
+  --border: rgba(31, 32, 29, 0.12);
+  --accent: #242520;
+  --accent-foreground: #ffffff;
+  position: relative;
+  background:
+    linear-gradient(180deg, #fbfbf8 0%, #f5f4ef 48%, #f7f7f4 100%);
+  color: var(--foreground);
+}
+
+html:not(.dark) body:not(:has(.cover-page))::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(31, 32, 29, 0.035) 0 1px, transparent 1px 88px),
+    linear-gradient(180deg, rgba(31, 32, 29, 0.028) 0 1px, transparent 1px 96px);
+  opacity: 0.55;
+}
+
+html:not(.dark) body:not(:has(.cover-page))::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+}
+
+html:not(.dark) body:not(:has(.cover-page)) > div {
+  position: relative;
+  z-index: 1;
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header,
+html:not(.dark) body:not(:has(.cover-page)) footer,
+html:not(.dark) body:has(.archive-home-shell) header,
+html:not(.dark) body:has(.archive-home-shell) footer {
+  border-color: rgba(30, 32, 29, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 245, 0.72), rgba(255, 252, 245, 0.34)),
+    rgba(247, 243, 234, 0.58);
+  color: var(--foreground);
+  box-shadow: none;
+  backdrop-filter: blur(12px) saturate(1.02);
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header > div,
+html:not(.dark) body:has(.archive-home-shell) header > div {
+  max-width: none;
+  padding-inline: clamp(1rem, 2.6vw, 2rem);
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header a,
+html:not(.dark) body:has(.archive-home-shell) header a {
+  color: rgba(31, 32, 29, 0.72);
+  text-shadow: none;
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header > div > div > a:first-child,
+html:not(.dark) body:has(.archive-home-shell) header > div > div > a:first-child,
+html:not(.dark) body:not(:has(.cover-page)) .site-mark,
+html:not(.dark) body:has(.archive-home-shell) .site-mark {
+  color: rgba(31, 32, 29, 0.88);
+}
+
+html:not(.dark) body:not(:has(.cover-page)) .site-mark:hover,
+html:not(.dark) body:has(.archive-home-shell) .site-mark:hover {
+  color: #171814;
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header nav,
+html:not(.dark) body:has(.archive-home-shell) header nav {
+  gap: 0.25rem;
+  border: 1px solid rgba(31, 32, 29, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 252, 0.66);
+  padding: 0.22rem;
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header nav a,
+html:not(.dark) body:has(.archive-home-shell) header nav a {
+  position: relative;
+  border-radius: 999px;
+  padding: 0.42rem 0.78rem;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header nav a:hover,
+html:not(.dark) body:has(.archive-home-shell) header nav a:hover {
+  background: rgba(31, 32, 29, 0.065);
+  color: #171814;
+  transform: translateY(-1px);
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header nav a.text-accent,
+html:not(.dark) body:has(.archive-home-shell) header nav a.text-accent {
+  background: #242520;
+  color: #fbfbf8;
+  box-shadow: 0 8px 22px rgba(31, 32, 29, 0.1);
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header button,
+html:not(.dark) body:has(.archive-home-shell) header button,
+html:not(.dark) body:not(:has(.cover-page)) header a[aria-label="返回封面页"],
+html:not(.dark) body:has(.archive-home-shell) header a[aria-label="返回封面页"] {
+  border: 1px solid rgba(31, 32, 29, 0.12);
+  background: rgba(255, 255, 252, 0.72);
+  color: rgba(31, 32, 29, 0.78);
+  box-shadow: none;
+}
+
+html:not(.dark) body:not(:has(.cover-page)) header button:hover,
+html:not(.dark) body:has(.archive-home-shell) header button:hover,
+html:not(.dark) body:not(:has(.cover-page)) header a[aria-label="返回封面页"]:hover,
+html:not(.dark) body:has(.archive-home-shell) header a[aria-label="返回封面页"]:hover {
+  background: rgba(31, 32, 29, 0.065);
+  color: #171814;
+  transform: translateY(-1px);
+}
+
+html:not(.dark) .archive-home-shell {
+  background: transparent;
+}
+
+html:not(.dark) .archive-home-shell::before,
+html:not(.dark) .archive-home-shell::after {
+  display: none;
+}
+
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell),
+html:not(.dark) .archive-home {
+  animation: dark-page-enter 520ms ease both;
+}
+
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) > h1,
+html:not(.dark) .archive-home h1 {
+  max-width: 12ch;
+  color: #1f201d;
+  font-family: "Iowan Old Style", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 430;
+  letter-spacing: 0;
+  line-height: 0.98;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) > p {
+  max-width: 44rem;
+  color: rgba(86, 86, 80, 0.82);
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+}
+
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) > h1::after,
+html:not(.dark) .archive-home section > h2::after {
+  content: "";
+  display: block;
+  width: min(100%, 8rem);
+  height: 1px;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, rgba(31, 32, 29, 0.34), transparent);
+}
+
+html:not(.dark) .archive-home {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+html:not(.dark) .archive-home::before {
+  display: none;
+}
+
+html:not(.dark) .archive-home > section {
+  min-width: 0;
+  border: 1px solid rgba(31, 32, 29, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 252, 0.78), rgba(244, 243, 238, 0.74)),
+    rgba(255, 255, 252, 0.66);
+  padding: clamp(1.35rem, 3vw, 2.2rem);
+  box-shadow:
+    0 18px 46px rgba(31, 32, 29, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(14px) saturate(1.02);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+html:not(.dark) .archive-home > section:first-child,
+html:not(.dark) .archive-home section:first-child {
+  border-top: 1px solid rgba(31, 32, 29, 0.12);
+}
+
+html:not(.dark) .archive-home > section:hover {
+  transform: translateY(-2px);
+  border-color: rgba(31, 32, 29, 0.2);
+  box-shadow:
+    0 24px 60px rgba(31, 32, 29, 0.075),
+    0 0 0 1px rgba(31, 32, 29, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+
+html:not(.dark) .archive-home > section > h2 {
+  margin-bottom: 1.5rem;
+}
+
+html:not(.dark) .archive-home > section.py-8 {
+  padding-top: clamp(1.35rem, 3vw, 2.2rem);
+  padding-bottom: clamp(1.35rem, 3vw, 2.2rem);
+}
+
+html:not(.dark) .archive-home h2,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) h2,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) h3 {
+  color: rgba(31, 32, 29, 0.9);
+  letter-spacing: 0;
+  text-shadow: none;
+}
+
+html:not(.dark) .archive-home .text-muted-foreground,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) .text-muted-foreground {
+  color: rgba(86, 86, 80, 0.82);
+}
+
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) article,
+html:not(.dark) .archive-home .bg-muted,
+html:not(.dark) .archive-home .bg-muted\/30,
+html:not(.dark) .archive-home .bg-accent\/10,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) .bg-muted,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) .bg-muted\/30,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) .bg-accent\/10 {
+  border: 1px solid rgba(31, 32, 29, 0.11);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 252, 0.78), rgba(244, 243, 238, 0.72)),
+    rgba(255, 255, 252, 0.62);
+  color: rgba(29, 33, 30, 0.9);
+  box-shadow:
+    0 14px 32px rgba(31, 32, 29, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(14px) saturate(1.02);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+html:not(.dark) .archive-home > section .bg-muted,
+html:not(.dark) .archive-home > section .bg-muted\/30,
+html:not(.dark) .archive-home > section .bg-accent\/10 {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.76),
+    0 10px 26px rgba(31, 32, 29, 0.04);
+}
+
+html:not(.dark) .archive-home > section .bg-muted:hover,
+html:not(.dark) .archive-home > section .bg-muted\/30:hover,
+html:not(.dark) .archive-home > section .bg-accent\/10:hover {
+  transform: none;
+  border-color: rgba(31, 32, 29, 0.16);
+}
+
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) article:hover,
+html:not(.dark) .archive-home .bg-muted:hover,
+html:not(.dark) .archive-home .bg-muted\/30:hover,
+html:not(.dark) .archive-home .bg-accent\/10:hover,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) .bg-muted:hover,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) .bg-muted\/30:hover,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) .bg-accent\/10:hover {
+  transform: translateY(-3px);
+  border-color: rgba(31, 32, 29, 0.2);
+  box-shadow:
+    0 22px 56px rgba(31, 32, 29, 0.075),
+    0 0 0 1px rgba(31, 32, 29, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+}
+
+html:not(.dark) .archive-home .text-accent,
+html:not(.dark) main > div:not(.cover-page):not(.archive-home-shell) .text-accent {
+  color: rgba(31, 32, 29, 0.88);
+}
+
+html:not(.dark) .archive-home .bg-accent {
+  background: #242520;
+  box-shadow:
+    0 0 0 4px rgba(31, 32, 29, 0.08),
+    0 0 22px rgba(31, 32, 29, 0.12);
+}
+
+@media (max-width: 640px) {
+  .archive-home-shell {
+    padding-block: 0.6rem 3.5rem;
+  }
+
+  .archive-home::before {
+    inset: 0.3rem -0.2rem;
+  }
 }
 
 /* Cover page */

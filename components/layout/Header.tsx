@@ -8,6 +8,70 @@ import { LanguageToggle } from "@/components/ui/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
+function TeruTeruMark() {
+  return (
+    <svg
+      className="site-mark-logo"
+      viewBox="0 0 88 104"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M44 13V4"
+        stroke="currentColor"
+        strokeWidth="3.1"
+        strokeLinecap="round"
+      />
+      <path
+        d="M21 53C15.6 60.3 11.3 74.1 8.4 91.4C17 88.9 23 90.7 28.3 95.1C33 99 39 98.3 44 91.8C49 98.3 55 99 59.7 95.1C65 90.7 71 88.9 79.6 91.4C76.7 74.1 72.4 60.3 67 53"
+        stroke="currentColor"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M23.5 55.7C33.8 61.3 54.2 61.3 64.5 55.7"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        opacity="0.72"
+      />
+      <circle
+        cx="44"
+        cy="35"
+        r="27"
+        stroke="currentColor"
+        strokeWidth="3.2"
+      />
+      <path
+        d="M34 32.8H34.2"
+        stroke="currentColor"
+        strokeWidth="4.8"
+        strokeLinecap="round"
+      />
+      <path
+        d="M53.8 32.8H54"
+        stroke="currentColor"
+        strokeWidth="4.8"
+        strokeLinecap="round"
+      />
+      <path
+        d="M34.2 44.3C37 48.5 40.2 50.3 44 50.3C47.8 50.3 51 48.5 53.8 44.3"
+        stroke="currentColor"
+        strokeWidth="2.9"
+        strokeLinecap="round"
+      />
+      <path
+        d="M62.2 69.8C64.4 75 65.8 80.2 66.6 85.4"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        opacity="0.46"
+      />
+    </svg>
+  );
+}
+
 /**
  * Site header with navigation, theme toggle and language toggle
  */
@@ -34,9 +98,11 @@ export function Header() {
           {/* Logo/name */}
           <Link
             href="/home"
-            className="min-w-0 font-semibold text-lg hover:opacity-70 transition-opacity"
+            className="site-mark"
+            aria-label="返回首页"
+            title={t.nav.home}
           >
-            {t.nav.home}
+            <TeruTeruMark />
           </Link>
 
           {/* Desktop navigation */}

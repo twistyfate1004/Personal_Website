@@ -20,7 +20,7 @@ function useHasHydrated() {
  * Theme toggle button to switch between light and dark mode
  */
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const mounted = useHasHydrated();
 
   if (!mounted) {
@@ -36,14 +36,14 @@ export function ThemeToggle() {
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       className="p-2 rounded-lg hover:bg-muted transition-colors"
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? (
-        <Sun className="w-5 h-5" />
-      ) : (
+      {resolvedTheme === "dark" ? (
         <Moon className="w-5 h-5" />
+      ) : (
+        <Sun className="w-5 h-5" />
       )}
     </button>
   );
