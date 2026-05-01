@@ -28,8 +28,8 @@ export default function RootLayout({
         <LanguageProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="dark"
+            enableSystem={false}
             disableTransitionOnChange
           >
             <div className="min-h-screen flex flex-col">

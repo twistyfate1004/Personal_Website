@@ -1,45 +1,42 @@
 [
   {
     "id": "edu-1",
-    "institution": "Waseda University",
-    "degree": "Master of Science",
-    "major": "Computer Science",
-    "startDate": "2023-09",
+    "institution": "Sample University A",
+    "degree": "Sample Degree",
+    "major": "Sample Major",
+    "startDate": "2024-09",
     "endDate": null,
     "current": true,
-    "location": "Tokyo, Japan",
-    "gpa": "3.8/4.0",
+    "location": "X Region",
+    "gpa": "X.X/4.0",
     "coursework": [
-      "Advanced Algorithms",
-      "Machine Learning",
-      "Distributed Systems",
-      "Computer Vision"
+      "Course A",
+      "Course B",
+      "Course C"
     ],
     "achievements": [
-      "Received Academic Excellence Scholarship",
-      "Published research paper on AI/ML"
+      "Placeholder achievement",
+      "Placeholder academic note"
     ]
   },
   {
     "id": "edu-2",
-    "institution": "Beijing University",
-    "degree": "Bachelor of Science",
-    "major": "Software Engineering",
-    "startDate": "2019-09",
-    "endDate": "2023-06",
+    "institution": "Sample University B",
+    "degree": "Sample Degree",
+    "major": "Sample Major",
+    "startDate": "2020-09",
+    "endDate": "2024-06",
     "current": false,
-    "location": "Beijing, China",
-    "gpa": "3.9/4.0",
+    "location": "X Region",
+    "gpa": "X.X/4.0",
     "coursework": [
-      "Data Structures and Algorithms",
-      "Database Systems",
-      "Software Engineering",
-      "Operating Systems"
+      "Course D",
+      "Course E",
+      "Course F"
     ],
     "achievements": [
-      "Graduated with First Class Honors",
-      "President of Programming Club",
-      "Won National Programming Competition"
+      "Placeholder leadership item",
+      "Placeholder award item"
     ]
   }
 ]

@@ -1,23 +1,17 @@
 {
   "skills": [
     {
-      "category": "Programming",
-      "items": ["Python", "C++", "SQL"]
+      "category": "Category A",
+      "items": ["Skill A", "Skill B", "Skill C"]
     },
     {
-      "category": "Product",
-      "items": ["Figma", "Axure"]
-    },
-    {
-      "category": "王者荣耀",
-      "items": ["干将莫邪", "女娲", "曹操", "少司缘", "空空儿"]
+      "category": "Category B",
+      "items": ["Tool A", "Tool B"]
     }
   ],
   "interests": [
-    "Swimming",
-    "Photography",
-    "Reading",
-    "Hiking",
-    "Coffee"
+    "Interest A",
+    "Interest B",
+    "Interest C"
   ]
 }

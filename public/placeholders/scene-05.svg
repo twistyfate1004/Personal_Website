@@ -1,0 +1,14 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffecd2"/>
+      <stop offset="100%" stop-color="#fcb69f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#sky5)"/>
+  <rect y="700" width="1600" height="500" fill="#f5e0b7"/>
+  <path d="M0 858C188 822 316 742 490 778C694 822 810 722 1004 740C1208 760 1364 684 1600 742V1200H0V858Z" fill="#d8a26a"/>
+  <path d="M0 974C198 940 358 854 526 900C740 958 888 846 1086 870C1290 896 1440 842 1600 884V1200H0V974Z" fill="#b86f3c"/>
+  <rect x="792" y="574" width="26" height="210" fill="#8d5a36"/>
+  <path d="M806 450c-80 46-114 114-112 184 72-28 130-34 224 0 0-72-42-138-112-184z" fill="#d07a43"/>
+</svg>
