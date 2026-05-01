@@ -1,54 +1,28 @@
 [
   {
-    "id": "personal-website",
-    "title": "个人主页",
-    "description": "一个vibe coding项目，目前正在搭建中……",
-    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "MDX","Vibe Coding"],
+    "id": "project-a",
+    "title": "示例项目 A",
+    "description": "这是一个示意项目，用来展示项目卡片布局。",
+    "tech": ["Next.js", "TypeScript", "Tailwind CSS"],
     "links": {
-      "github": "https://github.com/twistyfate1004/Growing-Margins",
-      "demo": "https://personalwebsite-production-471d.up.railway.app/"
+      "github": "https://github.com/username/project-a",
+      "demo": "https://example.com/project-a"
     },
     "featured": true
   },
   {
-    "id": "city",
-    "title": "智慧城市与交通—基于深度学习的大型机场附近交通流预测",
-    "description":[
-      "作为负责人兼第一作者，带领团队完成项目，聚焦智慧城市与交通领域。针对伦敦希思罗机场周边交通波动问题，主导数据收集、预处理（含爬虫抓取）和论文撰写。最终成果被ICDSE 2024录用并见刊，可在CPCI检索。",
-      "链接：https://www.researchgate.net/publication/382961444_Deep_Learning-Based_Prediction_and_Analysis_of_Highway_Traffic_Flow_near_Airports"
-    ],
-    "tech": ["Python","LSTM"],
-    "links": {
-      "github": "https://github.com/username/task-manager",
-      "demo": "https://github.com/username/task-manager"
-    },
-    "featured": true
-  },
-  {
-    "id": "creditCard",
-    "title": "基于异常行为检测的信用卡欺诈风险预警算法设计",
+    "id": "project-b",
+    "title": "示例项目 B",
     "description": [
-      {"isHeading": true, "title": "本科毕业论文（含金量你懂的）"},
-      "独立完成信用卡欺诈检测系统的建模与实验，使用堆叠自编码器（SAE）与关系门控时序图神经网络（RGTAN）构建模型，实现高效异常识别，MSE、ROC-AUC、AP等指标优于基线模型，显著提升检测准确率与鲁棒性。"
+      {
+        "isHeading": true,
+        "title": "说明"
+      },
+      "这里是一段项目说明示意文案。"
     ],
-    "tech": ["RGTAN", "SAE", "Python","本科毕业论文"],
+    "tech": ["React", "Node.js"],
     "links": {
-      "github": "https://github.com/username/task-manager",
-      "demo": "https://github.com/username/task-manager"
-    },
-    "featured": false
-  },
-  {
-    "id": "cstc",
-    "title": "花旗银行CSTC Fintech项目",
-    "description": [
-      {"isHeading": true, "title": "其实就是写SQL，搭看板"},
-      "基于花旗银行虚拟金融app数据，构建用户行为模型与界面热力图，分析使用路径与偏好；结合转化漏斗与session分析，识别关键流失环节及理财产品偏好，支持产品策略优化与个性化推荐。结项产出《基于用户行为分析的理财产品广告投放策略》报告。"
-    ],
-    "tech": ["转化漏斗", "Session分析", "SQL","Matlab"],
-    "links": {
-      "github": "https://github.com/username/task-manager",
-      "demo": "https://github.com/username/task-manager"
+      "github": "https://github.com/username/project-b"
     },
     "featured": false
   }

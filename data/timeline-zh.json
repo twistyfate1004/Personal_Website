@@ -1,50 +1,20 @@
 [
   {
-    "year": "2025.09 - 至今",
-    "title": "早稻田大学",
-    "description": "计算机科学与技术 · 硕士在读",
-    "type": "education"
-  },
-    {
-    "year": "2025.12 - 2026.04",
-    "title": "智谱华章",
-    "description": "MaaS平台 AI产品经理 · 实习",
+    "year": "2026 - 至今",
+    "title": "示例经历 A",
+    "description": "这里是时间线示意文案。",
     "type": "work"
   },
   {
-    "year": "2025.01 - 2025.05",
-    "title": "奇绩创坛（MiraclePlus）",
-    "description": "C端平台 B端中台 · 实习",
-    "type": "work"
-  },
-  {
-    "year": "2021.09 - 2025.06",
-    "title": "四川大学",
-    "description": "计算机科学与技术 + 金融工程 双学士学位",
+    "year": "2024 - 2026",
+    "title": "示例学校 A",
+    "description": "示例学位或示例阶段。",
     "type": "education"
   },
   {
-    "year": "2024.06 - 2024.09",
-    "title": "招商银行",
-    "description": "金融科技 · 实习",
-    "type": "work"
-  },
-  {
-    "year": "2019.09 - 2021.06",
-    "title": "北京中关村中学",
-    "description": "高中",
-    "type": "education"
-  },
-  {
-    "year": "2016.09 - 2019.06",
-    "title": "北京八一学校",
-    "description": "初中",
-    "type": "education"
-  },
-  {
-    "year": "2010.09 - 2016.06",
-    "title": "万泉小学",
-    "description": "小学",
-    "type": "education"
+    "year": "2022 - 2024",
+    "title": "示例经历 B",
+    "description": "这里是另一条示意文案。",
+    "type": "other"
   }
 ]

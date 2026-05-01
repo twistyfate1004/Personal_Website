@@ -1,33 +1,28 @@
 [
   {
-    "id": "personal-website",
-    "title": "web",
-    "description": "My personal website built with Next.js, featuring a blog, projects showcase, and about page. Designed with simplicity and performance in mind.",
-    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
+    "id": "project-a",
+    "title": "Sample Project A",
+    "description": "This is placeholder copy for a public project card.",
+    "tech": ["Next.js", "TypeScript", "Tailwind CSS"],
     "links": {
-      "github": "https://github.com/username/website",
-      "demo": "https://yourdomain.com"
+      "github": "https://github.com/username/project-a",
+      "demo": "https://example.com/project-a"
     },
     "featured": true
   },
   {
-    "id": "task-manager",
-    "title": "Task Manager",
-    "description": "A simple yet powerful task management application with drag-and-drop functionality, labels, and due dates.",
-    "tech": ["React", "Node.js", "MongoDB", "Express"],
+    "id": "project-b",
+    "title": "Sample Project B",
+    "description": [
+      {
+        "isHeading": true,
+        "title": "Overview"
+      },
+      "This is another piece of placeholder project text."
+    ],
+    "tech": ["React", "Node.js"],
     "links": {
-      "github": "https://github.com/username/task-manager"
-    },
-    "featured": true
-  },
-  {
-    "id": "weather-app",
-    "title": "Weather Dashboard",
-    "description": "A clean weather dashboard that shows current conditions and forecasts for multiple locations.",
-    "tech": ["Vue.js", "TypeScript", "OpenWeather API"],
-    "links": {
-      "github": "https://github.com/username/weather-app",
-      "demo": "https://weather-demo.vercel.app"
+      "github": "https://github.com/username/project-b"
     },
     "featured": false
   }

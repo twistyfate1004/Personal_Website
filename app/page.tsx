@@ -1,24 +1,24 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import fs from "fs";
 import path from "path";
+import { EnterArchiveLink } from "@/components/ui/EnterArchiveLink";
+import { BrandMark } from "@/components/ui/BrandMark";
 
-const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
+const imageExtensions = new Set([".svg"]);
 
 type CoverImage = {
   src: string;
 };
 
 function getCoverImages(): CoverImage[] {
-  const imagesDirectory = path.join(process.cwd(), "public", "images");
+  const imagesDirectory = path.join(process.cwd(), "public", "placeholders");
 
   return fs
     .readdirSync(imagesDirectory)
     .filter((fileName) => imageExtensions.has(path.extname(fileName).toLowerCase()))
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
     .map((fileName) => ({
-      src: `/images/${encodeURIComponent(fileName)}`,
+      src: `/placeholders/${encodeURIComponent(fileName)}`,
     }));
 }
 
@@ -38,70 +38,6 @@ function createCoverColumns(images: CoverImage[], columnCount = 5) {
 }
 
 const coverColumns = createCoverColumns(getCoverImages());
-
-function TeruTeruLogo() {
-  return (
-    <svg
-      className="cover-brand-logo"
-      viewBox="0 0 88 104"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M44 13V4"
-        stroke="currentColor"
-        strokeWidth="3.4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M21 53C15.6 60.3 11.3 74.1 8.4 91.4C17 88.9 23 90.7 28.3 95.1C33 99 39 98.3 44 91.8C49 98.3 55 99 59.7 95.1C65 90.7 71 88.9 79.6 91.4C76.7 74.1 72.4 60.3 67 53"
-        stroke="currentColor"
-        strokeWidth="3.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M23.5 55.7C33.8 61.3 54.2 61.3 64.5 55.7"
-        stroke="currentColor"
-        strokeWidth="2.8"
-        strokeLinecap="round"
-        opacity="0.72"
-      />
-      <circle
-        cx="44"
-        cy="35"
-        r="27"
-        stroke="currentColor"
-        strokeWidth="3.6"
-      />
-      <path
-        d="M34 32.8H34.2"
-        stroke="currentColor"
-        strokeWidth="5.4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M53.8 32.8H54"
-        stroke="currentColor"
-        strokeWidth="5.4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M34.2 44.3C37 48.5 40.2 50.3 44 50.3C47.8 50.3 51 48.5 53.8 44.3"
-        stroke="currentColor"
-        strokeWidth="3.2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M62.2 69.8C64.4 75 65.8 80.2 66.6 85.4"
-        stroke="currentColor"
-        strokeWidth="2.6"
-        strokeLinecap="round"
-        opacity="0.46"
-      />
-    </svg>
-  );
-}
 
 export default function CoverPage() {
   return (
@@ -136,23 +72,19 @@ export default function CoverPage() {
         <div className="cover-copy w-full max-w-3xl text-center sm:text-left">
           <div className="cover-brand mb-7" aria-label="Growing Margins">
             <h1>Growing Margins</h1>
-            <TeruTeruLogo />
+            <BrandMark className="cover-brand-logo" />
           </div>
           <p className="cover-name mb-5">
-            江博源 / Tristan Byron
+            Sample Name / X X
           </p>
           <p className="cover-body mx-auto mb-3 max-w-xl text-base leading-8 sm:mx-0 sm:text-lg">
-            四川大学 ➡️ Waseda University  
+            Sample School A {"->"} Sample School B
           </p>
           <p className="cover-body mx-auto mb-5 max-w-xl text-base leading-8 sm:mx-0 sm:text-lg">
-            海鸥跟随渔船是因为他们相信沙丁鱼会被扔进大海
+            This is placeholder cover copy for the public repository.
           </p>
       
-
-          <Link href="/home" className="cover-enter-button">
-            <span>Enter Archive</span>
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <EnterArchiveLink />
         </div>
       </section>
     </div>

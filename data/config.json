@@ -1,34 +1,38 @@
 {
-  "name": "Boyuan Jiang",
-  "motto": "When the seagulls follow the trawler, it's because they think sardines will be thrown into the sea.",
-  "avatar": "/avatar.jpg",
+  "name": "Sample Name",
+  "tagline": "Sample University A -> Sample University B",
+  "bio": "This is placeholder copy for the public version of the repository. Replace it with safe-to-share text or keep it as generic sample content.",
+  "motto": "This is placeholder text for the public demo.",
+  "avatar": "/avatar.svg",
   "personalInfo": {
-    "email": "13801107067@163.com",
-    "phone": "+86 13801107067",
-    "mbti": "INFJ",
-    "zodiac": "Libra",
-    "age": 23,
-    "hometown": "Beijing / Chengdu",
-    "baseLocation": "Beijing / Fukuoka"
+    "email": "example@example.com",
+    "phone": "+00 XXX XXXX XXXX",
+    "mbti": "XXXX",
+    "zodiac": "X",
+    "age": 20,
+    "hometown": "X City / X City",
+    "baseLocation": "X City"
   },
-  "selfDescription": "A passionate computer science student with a love for building innovative solutions. Always eager to learn new technologies and tackle challenging problems.",
-  "openingStyle": [
-    "I may seem a little reserved at first, but I open up quickly when the conversation touches something real.",
-    "The easiest way to get to know me is through books, travel stories, product thinking, or long conversations about how people make choices.",
-    "I value sincerity and detail, so I usually connect more through depth than through noise.",
-    "If you want a shortcut, talk to me about hiking, swimming, traveling, or Dream of the Red Chamber."
+  "selfDescription": [
+    "This paragraph is sample content for the About section.",
+    "You can replace everything here with generic portfolio copy.",
+    "For a fully anonymized repo, avoid any details that point back to a real person."
   ],
-
+  "openingStyle": [
+    "This is placeholder text.",
+    "Use this area for any public-safe notes.",
+    "You can also replace all of it with X."
+  ],
   "socials": [
     {
       "name": "GitHub",
-      "url": "https://github.com/twistyfate1004",
+      "url": "https://github.com/username",
       "icon": "github"
     },
     {
-      "name": "RedNote",
-      "url": "https://xhslink.com/m/8rWSeaBN2OQ",
-      "icon": "小红书"
+      "name": "Website",
+      "url": "https://example.com",
+      "icon": "link"
     }
   ]
 }

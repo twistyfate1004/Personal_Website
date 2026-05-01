@@ -1,48 +1,33 @@
 [
   {
     "id": "work-1",
-    "company": "Zhipu.ai",
-    "position": "MaaS",
-    "startDate": "2025.12",
-    "endDate": "Present",
+    "company": "Sample Company A",
+    "position": "Sample Role",
+    "startDate": "2026-01",
+    "endDate": null,
     "current": true,
-    "location": "Beijing",
+    "location": "X Region",
     "description": [
-      "Developed and maintained web applications using React and Node.js",
-      "Collaborated with cross-functional teams to deliver high-quality software solutions",
-      "Participated in code reviews and implemented best practices",
-      "Optimized application performance, reducing load time by 30%"
-    ]
+      {
+        "isHeading": true,
+        "title": "Responsibilities"
+      },
+      "This is placeholder work experience text.",
+      "Use this section for public-safe summaries only."
+    ],
+    "skills": ["Skill A", "Skill B"]
   },
   {
     "id": "work-2",
-    "company": "MiraclePlus",
-    "position": "Product Manager",
-    "startDate": "2025.01",
-    "endDate": "2025.05",
+    "company": "Sample Company B",
+    "position": "Sample Role",
+    "startDate": "2025-01",
+    "endDate": "2025-12",
     "current": false,
-    "location": "Beijing",
+    "location": "X Region",
     "description": [
-      "Developed and maintained web applications using React and Node.js",
-      "Collaborated with cross-functional teams to deliver high-quality software solutions",
-      "Participated in code reviews and implemented best practices",
-      "Optimized application performance, reducing load time by 30%"
-    ]
-  },
-  {
-    "id": "work-3",
-    "company": "China Merchants Bank",
-    "position": "Fintech Intern",
-    "startDate": "2024-06",
-    "endDate": "2024-09",
-    "current": false,
-    "location": "Hangzhou",
-    "description": [
-      "Built responsive user interfaces using Vue.js and Tailwind CSS",
-      "Worked closely with designers to implement pixel-perfect designs",
-      "Assisted in debugging and fixing production issues",
-      "Contributed to the development of internal tools and dashboards"
+      "This is another placeholder work item."
     ],
-    "skills": ["Vue.js", "JavaScript", "CSS", "Git"]
+    "skills": ["Skill C"]
   }
 ]
